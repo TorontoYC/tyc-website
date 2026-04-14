@@ -4,149 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sell Your Yacht — Toronto Yacht Club | List Your Boat</title>
-  <meta name="description" content="Looking to sell your boat? List it with Toronto Yacht Club. We'll help connect you with buyers across the GTA.">
+  <meta name="description" content="Looking to sell your boat? List it with Toronto Yacht Club and connect with buyers across the GTA.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+  <header class="site-header"><div class="container header-top"><a href="/" class="logo"><span>Toronto Yacht Club</span></a>
+      <div class="header-ctas"><a href="/inquiries#estimate" class="btn btn-secondary">Get Estimate</a><a href="/inquiries#book" class="btn btn-primary">Book Now</a></div><button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button></div><nav class="main-nav" id="main-nav"><div class="container"><ul class="nav-list"><li><a href="/">Home</a></li><li><a href="/services">Services</a></li><li><a href="/history">About Us</a></li><li><a href="/ourwork">Our Work</a></li><li><a href="/inquiries">Contact</a></li><li><a href="/local-listings">Local Listings</a></li><li><a href="/sell-your-boat" class="active">Sell Your Yacht</a></li></ul></div></nav></header>
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="container header-top">
-      <a href="/" class="logo"><span>Toronto Yacht Club</span></a>
-      <div class="header-ctas">
-        <a href="/inquiries#estimate" class="btn btn-secondary">Get Estimate</a>
-        <a href="/inquiries#book" class="btn btn-primary">Book Now</a>
-      </div>
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
-    </div>
-    <nav class="main-nav" id="main-nav">
-      <div class="container">
-        <ul class="nav-list">
-          <li><a href="/">Home</a></li>
-          <li><a href="/services">Services</a></li>
-          <li><a href="/history">About Us</a></li>
-          <li><a href="/ourwork">Our Work</a></li>
-          <li><a href="/inquiries">Contact</a></li>
-          <li><a href="/local-listings">Local Listings</a></li>
-          <li><a href="/sell-your-boat" class="active">Sell Your Yacht</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+  <section class="hero" style="padding:3rem 0 2.5rem;"><div class="container"><div class="hero-content"><p class="section-label">Sell with Us</p><h1>Sell Your Yacht</h1><p>Looking to sell? Fill out the form below and we'll help connect you with buyers in the GTA.</p></div></div></section>
 
-  <!-- PAGE HERO -->
-  <section class="hero" style="padding: 3rem 0 2.5rem;">
-    <div class="container">
-      <div class="hero-content">
-        <p class="section-label">Sell with Us</p>
-        <h1>Sell Your Yacht</h1>
-        <p>Looking to sell? Fill out the form below and we'll help connect you with buyers in the Greater Toronto Area.</p>
-      </div>
-    </div>
-  </section>
+  <section class="section"><div class="container"><div class="form-container">
+    <div class="form-header"><h2>List Your Boat</h2><p>Tell us about your vessel and we'll be in touch.</p></div>
+    <form id="sell-form" action="https://formsubmit.co/javier@torontoyachtclub.ca" method="POST">
+      <input type="hidden" name="_cc" value="nick@torontoyachtclub.ca">
+      <input type="hidden" name="_subject" value="New Boat Listing Submission">
+      <input type="hidden" name="_next" value="https://tyc-website.vercel.app/sell-your-boat?submitted=true">
+      <input type="hidden" name="_captcha" value="true">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" style="display:none">
+      <div class="form-row"><div class="form-group"><label for="seller-name">Your Name *</label><input type="text" id="seller-name" name="name" required placeholder="Your name"></div><div class="form-group"><label for="seller-phone">Phone Number *</label><input type="tel" id="seller-phone" name="phone" required placeholder="289-000-0000"></div></div>
+      <div class="form-group"><label for="seller-email">Email Address *</label><input type="email" id="seller-email" name="email" required placeholder="you@example.com"></div>
+      <div class="form-row"><div class="form-group"><label for="boat-make">Boat Make &amp; Model *</label><input type="text" id="boat-make" name="boat_make" required placeholder="e.g. Sea Ray Sundancer 370"></div><div class="form-group"><label for="boat-year">Year</label><input type="text" id="boat-year" name="boat_year" placeholder="e.g. 2005"></div></div>
+      <div class="form-row"><div class="form-group"><label for="boat-length">Length (ft)</label><input type="text" id="boat-length" name="boat_length" placeholder="e.g. 37"></div><div class="form-group"><label for="asking-price">Asking Price (CDN)</label><input type="text" id="asking-price" name="asking_price" placeholder="e.g. $98,000"></div></div>
+      <div class="form-group"><label for="boat-details">Additional Details</label><textarea id="boat-details" name="details" rows="5" placeholder="Engine type, condition, features, reason for selling…"></textarea></div>
+      <div class="form-submit"><button type="submit" class="btn btn-primary btn-large">Submit Listing</button></div>
+    </form>
+    <div class="form-success" id="sell-success"><h3>Listing Submitted!</h3><p>We'll review and get back to you soon. Call <a href="tel:2893250457">289-325-0457</a> with questions.</p></div>
+  </div></div></section>
 
-  <!-- SELL FORM -->
-  <section class="section">
-    <div class="container">
-      <div class="form-container">
-        <div class="form-header">
-          <h2>List Your Boat</h2>
-          <p>Tell us about your vessel and we'll be in touch to discuss listing options.</p>
-        </div>
-
-        <form id="sell-form" novalidate>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="seller-name">Your Name *</label>
-              <input type="text" id="seller-name" name="name" required placeholder="Your name">
-            </div>
-            <div class="form-group">
-              <label for="seller-phone">Phone Number *</label>
-              <input type="tel" id="seller-phone" name="phone" required placeholder="289-000-0000">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="seller-email">Email Address *</label>
-            <input type="email" id="seller-email" name="email" required placeholder="you@example.com">
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="boat-make">Boat Make &amp; Model *</label>
-              <input type="text" id="boat-make" name="boat_make" required placeholder="e.g. Sea Ray Sundancer 370">
-            </div>
-            <div class="form-group">
-              <label for="boat-year">Year</label>
-              <input type="text" id="boat-year" name="boat_year" placeholder="e.g. 2005">
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="boat-length">Length (ft)</label>
-              <input type="text" id="boat-length" name="boat_length" placeholder="e.g. 37">
-            </div>
-            <div class="form-group">
-              <label for="asking-price">Asking Price (CDN)</label>
-              <input type="text" id="asking-price" name="asking_price" placeholder="e.g. $98,000">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="boat-details">Additional Details</label>
-            <textarea id="boat-details" name="details" rows="5" placeholder="Engine type, condition, features, location, reason for selling…"></textarea>
-          </div>
-
-          <div class="form-submit">
-            <button type="submit" class="btn btn-primary btn-large">Submit Listing</button>
-          </div>
-        </form>
-
-        <div class="form-success" id="sell-success">
-          <h3>Listing Submitted!</h3>
-          <p>Thank you for your interest. We'll review your submission and get back to you soon. Questions? Call <a href="tel:2893250457">289-325-0457</a>.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col"><h4>Toronto Yacht Club</h4><p>Professional marine detailing and repair serving the Greater Toronto Area since 2016.</p></div>
-        <div class="footer-col"><h4>Quick Links</h4><ul class="footer-nav"><li><a href="/services">Services</a></li><li><a href="/history">About Us</a></li><li><a href="/ourwork">Our Work</a></li><li><a href="/inquiries">Contact / Inquiries</a></li><li><a href="/local-listings">Local Listings</a></li><li><a href="/sell-your-boat">Sell Your Yacht</a></li></ul></div>
-        <div class="footer-col"><h4>Contact</h4><address><a href="tel:2893250457">289-325-0457</a><br><a href="mailto:javier@torontoyachtclub.ca">javier@torontoyachtclub.ca</a><br><br>Mon–Sat: 8:00 AM – 6:00 PM</address></div>
-        <div class="footer-col"><h4>Locations</h4><address>Krates Marina, Keswick<br>Driftwood Cove, Port Severn<br>Grand Harbour, Brechin<br>Harbourfront, Toronto</address></div>
-      </div>
-      <div class="footer-bottom">&copy; 2026 Toronto Yacht Club. All rights reserved.</div>
-    </div>
-  </footer>
-
+  <footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-col"><h4>Toronto Yacht Club</h4><p>Professional marine detailing and repair serving the Greater Toronto Area since 2016.</p></div><div class="footer-col"><h4>Quick Links</h4><ul class="footer-nav"><li><a href="/services">Services</a></li><li><a href="/history">About Us</a></li><li><a href="/ourwork">Our Work</a></li><li><a href="/inquiries">Contact / Inquiries</a></li><li><a href="/local-listings">Local Listings</a></li><li><a href="/sell-your-boat">Sell Your Yacht</a></li></ul></div><div class="footer-col"><h4>Contact</h4><address><a href="tel:2893250457">289-325-0457</a><br><a href="mailto:javier@torontoyachtclub.ca">javier@torontoyachtclub.ca</a><br><br>Mon–Sat: 8:00 AM – 6:00 PM</address></div><div class="footer-col"><h4>Locations</h4><address>Krates Marina — Keswick<br>Driftwood Cove — Port Severn<br>Grand Harbour — Brechin<br>Downtown Toronto</address></div></div><div class="footer-bottom">&copy; 2026 Toronto Yacht Club. All rights reserved.</div></div></footer>
   <script src="/js/main.js"></script>
-  <script>
-    // Sell form handler
-    document.getElementById('sell-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('seller-name').value.trim();
-      const phone = document.getElementById('seller-phone').value.trim();
-      const email = document.getElementById('seller-email').value.trim();
-      const make = document.getElementById('boat-make').value.trim();
-
-      if (!name || !phone || !email || !make) {
-        alert('Please fill in all required fields.');
-        return;
-      }
-
-      // TODO: Connect to backend
-      console.log('Sell form submitted');
-      this.style.display = 'none';
-      document.getElementById('sell-success').classList.add('show');
-    });
-  </script>
+  <script>document.getElementById('sell-form').addEventListener('submit',function(e){var n=document.getElementById('seller-name').value.trim(),p=document.getElementById('seller-phone').value.trim(),em=document.getElementById('seller-email').value.trim(),m=document.getElementById('boat-make').value.trim();if(!n||!p||!em||!m){e.preventDefault();alert('Please fill in all required fields.');}});if(window.location.search.includes('submitted=true')){document.getElementById('sell-form').style.display='none';document.getElementById('sell-success').classList.add('show');}</script>
 </body>
 </html>
