@@ -14,7 +14,6 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
 
-  <!-- Schema.org LocalBusiness structured data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -27,7 +26,6 @@
     "openingHours": "Mo-Sa 08:00-18:00",
     "areaServed": "Greater Toronto Area",
     "priceRange": "$$",
-    "image": "https://torontoyachtclub.ca/images/og-image.jpg",
     "address": [
       {
         "@type": "PostalAddress",
@@ -53,19 +51,7 @@
         "postalCode": "L0K 1B0",
         "addressCountry": "CA"
       }
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Marine Services",
-      "itemListElement": [
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Boat Detailing"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Fiberglass & Gel Coat Repair"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Custom Canvas & Upholstery"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Bottom Antifouling Paint"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Winterization & Shrink Wrap"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Spring Launch"}}
-      ]
-    }
+    ]
   }
   </script>
 </head>
@@ -75,9 +61,16 @@
   <header class="site-header">
     <div class="container header-top">
       <a href="/" class="logo">
-        <!-- Replace with actual logo if available -->
         <span>Toronto Yacht Club</span>
       </a>
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+      </div>
       <div class="header-ctas">
         <a href="/inquiries#estimate" class="btn btn-secondary">Get Estimate</a>
         <a href="/inquiries#book" class="btn btn-primary">Book Now</a>
@@ -95,21 +88,23 @@
           <li><a href="/local-listings">Local Listings</a></li>
           <li><a href="/sell-your-boat">Sell Your Yacht</a></li>
         </ul>
+        <div class="mobile-ctas">
+          <a href="/inquiries#estimate" class="btn btn-secondary" style="flex:1;">Get Estimate</a>
+          <a href="/inquiries#book" class="btn btn-primary" style="flex:1;">Book Now</a>
+        </div>
       </div>
     </nav>
   </header>
 
-  <!-- ============ HERO ============ -->
-  <section class="hero">
+  <!-- ============ FULLSCREEN HERO — Big photo like current site ============ -->
+  <section class="hero-fullscreen">
+    <div class="hero-bg" style="background-image: url('/images/hero.jpg'); background-color: var(--navy);"></div>
     <div class="container">
-      <div class="hero-content">
-        <p class="section-label">Marine Detailing &amp; Repair — Since 2016</p>
-        <h1>For All Your Yachting Needs</h1>
-        <p>Professional detailing, fiberglass repair, custom canvas, winterization and more. Serving the Greater Toronto Area from four marina locations with over 20,000 sq/ft of workspace.</p>
-        <div class="hero-ctas">
-          <a href="/inquiries#estimate" class="btn btn-primary btn-large">Get a Free Estimate</a>
-          <a href="/inquiries#book" class="btn btn-secondary btn-large">Book a Service</a>
-        </div>
+      <h1>TORONTO YACHT CLUB</h1>
+      <p class="hero-tagline">For All Your Yachting Needs</p>
+      <div class="hero-ctas">
+        <a href="/inquiries#estimate" class="btn btn-primary btn-large">Get a Free Estimate</a>
+        <a href="/inquiries#book" class="btn btn-secondary btn-large">Book a Service</a>
       </div>
     </div>
   </section>
@@ -164,31 +159,19 @@
       <div class="locations-grid">
         <div class="location-card">
           <h3>Krates Marina — Keswick</h3>
-          <address>
-            290 The Queensway S<br>
-            Keswick, ON L4P 2B3
-          </address>
+          <address>290 The Queensway S<br>Keswick, ON L4P 2B3</address>
         </div>
         <div class="location-card">
           <h3>Driftwood Cove Marine Resort</h3>
-          <address>
-            93 Port Severn Rd N<br>
-            Port Severn, ON L0K 1S0
-          </address>
+          <address>93 Port Severn Rd N<br>Port Severn, ON L0K 1S0</address>
         </div>
         <div class="location-card">
           <h3>Grand Harbour Marina</h3>
-          <address>
-            150 Laguna Pkwy<br>
-            Brechin, ON L0K 1B0
-          </address>
+          <address>150 Laguna Pkwy<br>Brechin, ON L0K 1B0</address>
         </div>
         <div class="location-card">
           <h3>Downtown Toronto — Harbourfront</h3>
-          <address>
-            Toronto, ON<br>
-            <em>Exact address coming soon</em>
-          </address>
+          <address>Toronto, ON<br><em>Exact address coming soon</em></address>
         </div>
       </div>
     </div>
@@ -213,6 +196,14 @@
         <div class="footer-col">
           <h4>Toronto Yacht Club</h4>
           <p>Professional marine detailing and repair serving the Greater Toronto Area since 2016.</p>
+          <div class="social-icons" style="margin-top: 1rem;">
+            <a href="#" aria-label="Facebook" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+          </div>
         </div>
         <div class="footer-col">
           <h4>Quick Links</h4>
@@ -236,8 +227,10 @@
         <div class="footer-col">
           <h4>Locations</h4>
           <address>
-            Keswick · Port Severn<br>
-            Brechin · Downtown Toronto
+            Krates Marina, Keswick<br>
+            Driftwood Cove, Port Severn<br>
+            Grand Harbour, Brechin<br>
+            Harbourfront, Toronto
           </address>
         </div>
       </div>

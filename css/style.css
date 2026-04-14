@@ -268,6 +268,93 @@ h4 { font-size: 1.1rem; }
   max-width: 640px;
 }
 
+/* Fullscreen hero for homepage */
+.hero-fullscreen {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  overflow: hidden;
+  padding: 2rem 0;
+}
+
+.hero-fullscreen .hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-fullscreen .hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 29, 51, 0.55);
+}
+
+.hero-fullscreen .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-fullscreen h1 {
+  color: var(--white);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+
+.hero-fullscreen .hero-tagline {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+}
+
+.hero-fullscreen .hero-ctas {
+  justify-content: center;
+}
+
+/* Social icons */
+.social-icons {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  color: var(--white);
+  transition: background var(--transition);
+}
+
+.social-icons a:hover {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+.social-icons svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+/* Hide mobile CTA block on desktop */
+.mobile-ctas-desktop-hide {
+  display: none;
+}
+
 .hero h1 {
   color: var(--white);
   margin-bottom: 1rem;
@@ -675,6 +762,10 @@ h4 { font-size: 1.1rem; }
     display: block;
   }
 
+  .social-icons {
+    display: none;
+  }
+
   .main-nav {
     display: none;
   }
@@ -693,7 +784,18 @@ h4 { font-size: 1.1rem; }
   }
 
   .header-ctas {
-    display: none;
+    display: flex;
+    gap: 0.35rem;
+  }
+
+  .header-ctas .btn {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.72rem;
+  }
+
+  /* Hide the in-nav mobile CTAs since they're always visible in header now */
+  .mobile-ctas {
+    display: none !important;
   }
 
   .hero {
