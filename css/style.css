@@ -94,14 +94,15 @@ h4 { font-size: 1.1rem; }
 /* Social icons in header */
 .social-icons { display: flex; gap: 0.5rem; align-items: center; }
 .social-icons a {
-  display: flex; align-items: center; justify-content: center;
-  width: 32px; height: 32px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px; min-width: 32px; min-height: 32px; max-width: 32px; max-height: 32px;
+  border-radius: 50%;
   background: rgba(255,255,255,0.12);
   color: var(--white);
   transition: background var(--transition);
 }
 .social-icons a:hover { background: var(--gold); color: var(--navy); }
-.social-icons svg { width: 16px; height: 16px; fill: currentColor; }
+.social-icons svg { width: 16px; height: 16px; min-width: 16px; max-width: 16px; fill: currentColor; }
 
 /* CTA buttons in header — always visible */
 .header-ctas { display: flex; gap: 0.5rem; }
