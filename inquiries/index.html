@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact &amp; Inquiries — Toronto Yacht Club | Get an Estimate</title>
+  <meta name="description" content="Request a free estimate or book a marine service. Contact Toronto Yacht Club at 289-325-0457. 4 locations across the GTA.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-top">
+      <a href="/" class="logo"><span>Toronto Yacht Club</span></a>
+      <div class="header-ctas">
+        <a href="/inquiries#estimate" class="btn btn-secondary">Get Estimate</a>
+        <a href="/inquiries#book" class="btn btn-primary">Book Now</a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+    </div>
+    <nav class="main-nav" id="main-nav">
+      <div class="container">
+        <ul class="nav-list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/history">About Us</a></li>
+          <li><a href="/ourwork">Our Work</a></li>
+          <li><a href="/inquiries" class="active">Contact</a></li>
+          <li><a href="/local-listings">Local Listings</a></li>
+          <li><a href="/sell-your-boat">Sell Your Yacht</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- CONTACT INFO -->
+  <section class="hero" style="padding: 3rem 0 2.5rem;">
+    <div class="container">
+      <div class="hero-content">
+        <p class="section-label">Get In Touch</p>
+        <h1>Contact &amp; Inquiries</h1>
+        <p>Call us at <a href="tel:2893250457" style="color: var(--gold);">289-325-0457</a> or fill out the form below. We typically respond within 24 hours.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM SECTION -->
+  <section class="section" id="estimate">
+    <div class="container">
+      <div class="form-container" id="inquiry-form-container">
+        <div class="form-header" id="form-header">
+          <h2>Get a Free Estimate</h2>
+          <p>Tell us about your vessel and what you need — no obligation.</p>
+        </div>
+
+        <form id="inquiry-form" novalidate>
+          <input type="hidden" name="form_type" id="form_type" value="estimate">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" required placeholder="Your name">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" required placeholder="289-000-0000">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required placeholder="you@example.com">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="boat_info">Boat Make / Model / Size</label>
+              <input type="text" id="boat_info" name="boat_info" placeholder="e.g. Sea Ray Sundancer 370">
+            </div>
+            <div class="form-group">
+              <label for="service">Service Needed</label>
+              <select id="service" name="service">
+                <option value="">Select a service…</option>
+                <option value="interior-detailing">Interior Detailing</option>
+                <option value="exterior-detailing">Exterior Detailing / Deck & Hull</option>
+                <option value="polish-wax-compound">Polishing, Waxing & Compound</option>
+                <option value="fiberglass-repair">Fiberglass & Gel Coat Repair</option>
+                <option value="canvas-upholstery">Canvas, Awnings & Upholstery</option>
+                <option value="propeller-lower-unit">Propeller & Lower Unit Repair</option>
+                <option value="synthetic-teak">Synthetic Teak Decking</option>
+                <option value="bottom-paint">Bottom Antifouling Paint</option>
+                <option value="winterization">Winterization / Shrink Wrap</option>
+                <option value="spring-launch">Spring Launch</option>
+                <option value="other">Other — Describe Below</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="location">Preferred Location</label>
+            <select id="location" name="location">
+              <option value="">Select a location…</option>
+              <option value="keswick">Krates Marina — Keswick</option>
+              <option value="port-severn">Driftwood Cove — Port Severn</option>
+              <option value="brechin">Grand Harbour Marina — Brechin</option>
+              <option value="toronto">Downtown Toronto — Harbourfront</option>
+              <option value="flexible">Flexible / Not Sure</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message / Additional Details</label>
+            <textarea id="message" name="message" rows="5" placeholder="Anything else we should know — timeline, specific issues, questions…"></textarea>
+          </div>
+
+          <div class="form-submit">
+            <button type="submit" class="btn btn-primary btn-large" id="submit-btn">Send Inquiry</button>
+          </div>
+        </form>
+
+        <!-- Success message (shown after submit) -->
+        <div class="form-success" id="form-success">
+          <h3>Thank You!</h3>
+          <p>We've received your inquiry and will get back to you within 24 hours. If you need immediate assistance, call us at <a href="tel:2893250457">289-325-0457</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hidden anchor for "Book Now" CTA — same form, different header -->
+  <span id="book"></span>
+
+  <!-- CONTACT DETAILS -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Other Ways to Reach Us</p>
+        <h2>Contact Details</h2>
+      </div>
+      <div class="locations-grid">
+        <div class="location-card">
+          <h3>Phone</h3>
+          <p><a href="tel:2893250457" style="font-size:1.15rem; font-weight:600;">289-325-0457</a></p>
+          <p style="color:var(--text-light); font-size:0.9rem; margin-top:0.25rem;">Mon–Sat: 8:00 AM – 6:00 PM</p>
+        </div>
+        <div class="location-card">
+          <h3>Email</h3>
+          <p><a href="mailto:javier@torontoyachtclub.ca">javier@torontoyachtclub.ca</a></p>
+          <p><a href="mailto:nick@torontoyachtclub.ca">nick@torontoyachtclub.ca</a></p>
+        </div>
+        <div class="location-card">
+          <h3>Krates Marina — Keswick</h3>
+          <address>290 The Queensway S<br>Keswick, ON L4P 2B3</address>
+        </div>
+        <div class="location-card">
+          <h3>Driftwood Cove — Port Severn</h3>
+          <address>93 Port Severn Rd N<br>Port Severn, ON L0K 1S0</address>
+        </div>
+        <div class="location-card">
+          <h3>Grand Harbour Marina — Brechin</h3>
+          <address>150 Laguna Pkwy<br>Brechin, ON L0K 1B0</address>
+        </div>
+        <div class="location-card">
+          <h3>Downtown Toronto</h3>
+          <address>Harbourfront, Toronto, ON<br><em>Exact address coming soon</em></address>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col"><h4>Toronto Yacht Club</h4><p>Professional marine detailing and repair serving the Greater Toronto Area since 2016.</p></div>
+        <div class="footer-col"><h4>Quick Links</h4><ul class="footer-nav"><li><a href="/services">Services</a></li><li><a href="/history">About Us</a></li><li><a href="/ourwork">Our Work</a></li><li><a href="/inquiries">Contact / Inquiries</a></li><li><a href="/local-listings">Local Listings</a></li><li><a href="/sell-your-boat">Sell Your Yacht</a></li></ul></div>
+        <div class="footer-col"><h4>Contact</h4><address><a href="tel:2893250457">289-325-0457</a><br><a href="mailto:javier@torontoyachtclub.ca">javier@torontoyachtclub.ca</a><br><br>Mon–Sat: 8:00 AM – 6:00 PM</address></div>
+        <div class="footer-col"><h4>Locations</h4><address>Keswick · Port Severn<br>Brechin · Downtown Toronto</address></div>
+      </div>
+      <div class="footer-bottom">&copy; 2026 Toronto Yacht Club. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <script>
+    // Handle #book hash — change form header to "Book a Service"
+    function updateFormHeader() {
+      const hash = window.location.hash;
+      const header = document.getElementById('form-header');
+      const formType = document.getElementById('form_type');
+      if (hash === '#book') {
+        header.innerHTML = '<h2>Book a Service</h2><p>Ready to go? Tell us what you need and we\'ll get you scheduled.</p>';
+        formType.value = 'booking';
+      } else {
+        header.innerHTML = '<h2>Get a Free Estimate</h2><p>Tell us about your vessel and what you need — no obligation.</p>';
+        formType.value = 'estimate';
+      }
+    }
+    updateFormHeader();
+    window.addEventListener('hashchange', updateFormHeader);
+
+    // Form submission handler
+    // TODO: Replace with actual backend (Supabase / Formspree / Vercel function)
+    document.getElementById('inquiry-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Basic validation
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const email = document.getElementById('email').value.trim();
+
+      if (!name || !phone || !email) {
+        alert('Please fill in your name, phone number, and email address.');
+        return;
+      }
+
+      // Collect form data
+      const formData = {
+        form_type: document.getElementById('form_type').value,
+        name: name,
+        phone: phone,
+        email: email,
+        boat_info: document.getElementById('boat_info').value.trim(),
+        service: document.getElementById('service').value,
+        location: document.getElementById('location').value,
+        message: document.getElementById('message').value.trim(),
+        submitted_at: new Date().toISOString()
+      };
+
+      console.log('Form submission:', formData);
+
+      // TODO: Send to backend
+      // For now, show success message
+      document.getElementById('inquiry-form').style.display = 'none';
+      document.getElementById('form-success').classList.add('show');
+    });
+  </script>
+</body>
+</html>
