@@ -315,7 +315,7 @@ h4 { font-size: 1.1rem; }
     font-size: 0.72rem;
   }
 
-  .social-icons { display: none; }
+  .social-icons { display: none !important; visibility: hidden; width: 0; height: 0; overflow: hidden; }
   .hero { padding: 3.5rem 0 3rem; }
   .hero-fullscreen { min-height: 70vh; }
   .form-row { grid-template-columns: 1fr; }
