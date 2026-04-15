@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Service — Toronto Yacht Club | Marine Detailing &amp; Repair</title>
+  <meta name="description" content="Book marine detailing, polishing, fiberglass repair, bottom paint and more. View pricing and request service online.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .book-form .service-section { margin-bottom: 2rem; padding: 1.5rem; background: var(--bg-alt, #f8f7f4); border-radius: 8px; }
+    .book-form .service-section-title { font-family: 'DM Serif Display', serif; font-size: 1.25rem; margin-bottom: 1rem; color: var(--heading, #1a1a1a); border-bottom: 2px solid var(--gold, #c8a84e); padding-bottom: 0.5rem; }
+    .book-form .service-option { display: flex; align-items: flex-start; gap: 0.6rem; padding: 0.6rem 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .book-form .service-option:last-child { border-bottom: none; }
+    .book-form .service-option input[type="checkbox"] { width: 18px; height: 18px; margin-top: 3px; accent-color: var(--gold, #c8a84e); flex-shrink: 0; }
+    .book-form .service-option .option-content { flex: 1; }
+    .book-form .service-option .option-name { font-weight: 600; font-size: 0.95rem; }
+    .book-form .service-option .option-price { color: var(--gold, #c8a84e); font-weight: 600; font-size: 0.9rem; margin-top: 0.15rem; }
+    .book-form .service-option .option-note { font-size: 0.85rem; color: var(--text-light, #777); margin-top: 0.2rem; }
+    .book-form .section-note { font-size: 0.85rem; color: var(--text-light, #777); margin-top: 0.75rem; font-style: italic; }
+    .book-form .auth-box { background: var(--bg-alt, #f8f7f4); border: 2px solid var(--gold, #c8a84e); border-radius: 8px; padding: 1.5rem; margin-top: 1.5rem; }
+    .book-form .auth-box h3 { font-family: 'DM Serif Display', serif; font-size: 1.1rem; margin-bottom: 0.75rem; }
+    .book-form .auth-box ul { font-size: 0.9rem; color: var(--text-light, #777); margin: 0 0 1rem 1.25rem; line-height: 1.6; }
+    .book-form .auth-check { display: flex; align-items: center; gap: 0.6rem; font-weight: 600; font-size: 0.95rem; }
+    .book-form .auth-check input { width: 20px; height: 20px; accent-color: var(--gold, #c8a84e); }
+    .file-upload-note { font-size: 0.85rem; color: var(--text-light, #777); margin-top: 0.35rem; }
+    @media (max-width: 600px) { .book-form .service-section { padding: 1rem; } }
+  </style>
+</head>
+<body>
+  <header class="site-header"><div class="container header-top"><a href="/" class="logo"><span>Toronto Yacht Club</span></a>
+      <div class="header-ctas"><a href="/inquiries#estimate" class="btn btn-secondary">Get Estimate</a><a href="/book" class="btn btn-primary">Book Now</a></div><button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button></div><nav class="main-nav" id="main-nav"><div class="container"><ul class="nav-list"><li><a href="/">Home</a></li><li><a href="/services">Services</a></li><li><a href="/history">About Us</a></li><li><a href="/ourwork">Our Work</a></li><li><a href="/inquiries">Contact</a></li><li><a href="/local-listings">Local Listings</a></li><li><a href="/sell-your-boat">Sell Your Yacht</a></li></ul></div></nav></header>
+
+  <section class="hero" style="padding:3rem 0 2.5rem;"><div class="container"><div class="hero-content"><p class="section-label">Book a Service</p><h1>Service Request Form</h1><p>Select the services you need, review the pricing, and submit your request. We'll be in touch within 24 hours.</p></div></div></section>
+
+  <section class="section">
+    <div class="container">
+      <div class="form-container book-form">
+
+        <form id="book-form" action="https://formsubmit.co/javier@torontoyachtclub.ca" method="POST" enctype="multipart/form-data">
+          <!-- Formsubmit config -->
+          <input type="hidden" name="_cc" value="nick@torontoyachtclub.ca">
+          <input type="hidden" name="_subject" value="New TYC Service Booking">
+          <input type="hidden" name="_next" value="https://torontoyachtclub.ca/book?submitted=true">
+          <input type="hidden" name="_captcha" value="true">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="_honey" style="display:none">
+
+          <!-- CUSTOMER INFO -->
+          <div class="service-section">
+            <h3 class="service-section-title">Customer Information</h3>
+            <div class="form-row">
+              <div class="form-group"><label for="name">Full Name *</label><input type="text" id="name" name="name" required placeholder="Your name"></div>
+              <div class="form-group"><label for="phone">Phone Number *</label><input type="tel" id="phone" name="phone" required placeholder="289-000-0000"></div>
+            </div>
+            <div class="form-group"><label for="email">Email Address *</label><input type="email" id="email" name="email" required placeholder="you@example.com"></div>
+          </div>
+
+          <!-- VESSEL INFO -->
+          <div class="service-section">
+            <h3 class="service-section-title">Vessel Information</h3>
+            <div class="form-row">
+              <div class="form-group"><label for="boat_info">Make / Model / Year *</label><input type="text" id="boat_info" name="boat_info" required placeholder="e.g. Sea Ray Sundancer 370, 1998"></div>
+              <div class="form-group"><label for="loa">Length Overall (LOA) *</label><input type="text" id="loa" name="loa" required placeholder="e.g. 37 ft"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label for="reg_number">Boat Registration Number</label><input type="text" id="reg_number" name="reg_number" placeholder="e.g. ON1234567"><p class="file-upload-note">Located on both sides of the bow, above the waterline.</p></div>
+              <div class="form-group"><label for="location">Preferred Location *</label><select id="location" name="location" required><option value="">Select a location…</option><option value="Krates Marina — Keswick">Krates Marina — Keswick</option><option value="Driftwood Cove — Port Severn">Driftwood Cove — Port Severn</option><option value="Grand Harbour Marina — Brechin">Grand Harbour Marina — Brechin</option><option value="Downtown Toronto — Harbourfront">Downtown Toronto — Harbourfront</option></select></div>
+            </div>
+          </div>
+
+          <!-- CLEAN + WAX + POLISH -->
+          <div class="service-section">
+            <h3 class="service-section-title">Clean + Wax + Polish</h3>
+            <div class="service-option">
+              <input type="checkbox" name="services" value="Clean + Wax + Polish — Hull ($24/ft)" id="cwp_hull">
+              <div class="option-content"><label for="cwp_hull" class="option-name">Hull</label><div class="option-price">$24 / ft</div></div>
+            </div>
+            <div class="service-option">
+              <input type="checkbox" name="services" value="Clean + Wax + Polish — Super Structure ($26/ft)" id="cwp_super">
+              <div class="option-content"><label for="cwp_super" class="option-name">Super Structure</label><div class="option-price">$26 / ft</div></div>
+            </div>
+          </div>
+
+          <!-- CLEAN + BUFF + WAX + POLISH -->
+          <div class="service-section">
+            <h3 class="service-section-title">Clean + Buff + Wax + Polish</h3>
+            <div class="service-option">
+              <input type="checkbox" name="services" value="Clean + Buff + Wax + Polish — Hull ($32/ft)" id="cbwp_hull">
+              <div class="option-content"><label for="cbwp_hull" class="option-name">Hull</label><div class="option-price">$32 / ft</div></div>
+            </div>
+            <div class="service-option">
+              <input type="checkbox" name="services" value="Clean + Buff + Wax + Polish — Super Structure ($34/ft)" id="cbwp_super">
+              <div class="option-content"><label for="cbwp_super" class="option-name">Super Structure</label><div class="option-price">$34 / ft</div></div>
+            </div>
+            <p class="section-note">Some vessels may require extra care, including double cut, triple cut, or wet sanding. Prices available upon request.</p>
+          </div>
+
+          <!-- CERAMIC COATING -->
+          <div class="service-section">
+            <h3 class="service-section-title">Ceramic Coating</h3>
+            <div class="service-option">
+              <input type="checkbox" name="services" value="Ceramic Coating — 3 Year Protection ($80/ft)" id="ceramic_3">
+              <div class="option-content"><label for="ceramic_3" class="option-name">3 Year Protection</label><div class="option-price">$80 / ft</div></div>
+            </div>
+            <div class="service-option">
+              <input type="checkbox" name="services" value="Ceramic Coating — 5 Year Protection ($100/ft)" id="ceramic_5">
+              <div class="option-content"><label for="ceramic_5" class="option-name">5 Year Protection</label><div class="option-price">$100 / ft</div></div>
+            </div>
+          </div>
+
+          <!-- INTERIOR SPRING CLEANING -->
+          <div class="service-section">
+            <h3 class="service-section-title">Interior Spring Cleaning</h3>
+            <div class="service-option">
+              <input type="checkbox" name="services" value="Interior Spring Cleaning (from $15/ft)" id="interior_clean">
+              <div class="option-content"><label for="interior_clean" class="option-name">Steam clean carpets, clean and condition vinyl, deep clean of all surfaces</label><div class="option-price">Starting from $15 / ft</div><div class="option-note">* Prices may vary depending on the condition of the vessel.</div></div>
+            </div>
+          </div>
+
+          <!-- STEAM CLEAN CARPETS -->
+          <div class="service-section">
+            <h3 class="service-section-title">Steam Clean Carpets</h3>
+            <div class="service-option">
+              <input type="checkbox" name="services" value="Steam Clean Carpets (price on request)" id="steam_carpets">
+              <div class="option-content"><label for="steam_carpets" class="option-name">Steam clean carpets using a commercial extractor with heavy-duty suction vacuum</label><div class="option-price">Price on request</div><div class="option-note">Varies depending on the sq/ft and condition of the carpet.</div></div>
+            </div>
+          </div>
+
+          <!-- EXTERIOR SPRING CLEANING -->
+          <div class="service-section">
+            <h3 class="service-section-title">Exterior Spring Cleaning</h3>
+            <div class="service-option">
+              <input type="checkbox" name="services" value="Exterior Spring Cleaning (from $13/ft)" id="exterior_clean">
+              <div class="option-content"><label for="exterior_clean" class="option-name">Spotless wash and dry of all surfaces, removal of grime and stains, window cleaning, teak cleaning, aluminium polish</label><div class="option-price">Starting from $13 / ft</div><div class="option-note">* Prices vary depending on the condition of the vessel.</div></div>
+            </div>
+          </div>
+
+          <!-- REMOVE & CLEAN CANVAS -->
+          <div class="service-section">
+            <h3 class="service-section-title">Remove &amp; Clean Canvas</h3>
+            <div class="service-option">
+              <input type="checkbox" name="services" value="Remove & Clean Canvas (price on request)" id="clean_canvas">
+              <div class="option-content"><label for="clean_canvas" class="option-name">Remove and clean canvas</label><div class="option-price">Price available upon request</div></div>
+            </div>
+          </div>
+
+          <!-- FIBERGLASS REPAIR -->
+          <div class="service-section">
+            <h3 class="service-section-title">Fiberglass Repair</h3>
+            <div class="service-option">
+              <input type="checkbox" name="services" value="Fiberglass Repair (labour from $120/ft + materials)" id="fiberglass">
+              <div class="option-content"><label for="fiberglass" class="option-name">Fiberglass &amp; gel coat repair</label><div class="option-price">Labour starting from $120 / ft + materials</div><div class="option-note">Boats stored indoors need to be blocked outside to complete repairs.</div></div>
+            </div>
+            <div class="form-group" style="margin-top:0.75rem;"><label for="fiberglass_details">Describe the repair needed:</label><textarea id="fiberglass_details" name="fiberglass_details" rows="3" placeholder="Tell us about the fiberglass repair you're requesting…"></textarea></div>
+          </div>
+
+          <!-- BOTTOM PAINT -->
+          <div class="service-section">
+            <h3 class="service-section-title">Bottom / Antifouling Paint</h3>
+            <div class="service-option">
+              <input type="checkbox" name="services" value="Bottom Paint — removal + application (price varies)" id="bottom_paint">
+              <div class="option-content"><label for="bottom_paint" class="option-name">Removal of existing antifouling paint plus application</label><div class="option-price">Price varies by condition &amp; paint choice</div><div class="option-note">Boats stored indoors need to be blocked outside to complete this service.</div></div>
+            </div>
+          </div>
+
+          <!-- BOTTOM ACID WASH -->
+          <div class="service-section">
+            <h3 class="service-section-title">Bottom Acid Wash</h3>
+            <div class="service-option">
+              <input type="checkbox" name="services" value="Bottom Acid Wash ($12/ft)" id="acid_wash">
+              <div class="option-content"><label for="acid_wash" class="option-name">Bottom acid wash</label><div class="option-price">$12 / ft</div><div class="option-note">Fiberglass bottom boats only.</div></div>
+            </div>
+          </div>
+
+          <!-- PRESSURE WASH -->
+          <div class="service-section">
+            <h3 class="service-section-title">Pressure Wash</h3>
+            <div class="service-option">
+              <input type="checkbox" name="services" value="Pressure Wash ($5/ft)" id="pressure_wash">
+              <div class="option-content"><label for="pressure_wash" class="option-name">Soap and pressure wash bottom</label><div class="option-price">$5 / ft</div></div>
+            </div>
+          </div>
+
+          <!-- PHOTOS -->
+          <div class="service-section">
+            <h3 class="service-section-title">Photos &amp; Additional Info</h3>
+            <div class="form-group">
+              <label for="photos">Upload Photos <span style="font-weight:400; color:var(--text-light, #777);">(optional)</span></label>
+              <input type="file" id="photos" name="attachment" accept="image/*" multiple>
+              <p class="file-upload-note">Upload photos of your vessel or areas that need work. Max 5 MB per file.</p>
+            </div>
+            <div class="form-group" style="margin-top:1rem;"><label for="comments">Comments / Additional Information</label><textarea id="comments" name="comments" rows="4" placeholder="Anything else we should know…"></textarea></div>
+          </div>
+
+          <!-- AUTHORIZATION -->
+          <div class="auth-box">
+            <h3>Authorization</h3>
+            <ul>
+              <li>You, the owner, authorize Toronto Yacht Club to complete the work indicated above.</li>
+              <li>You agree that the property is insured by you against any damages or loss while work is being completed on the vessel.</li>
+              <li>Services requested by the owner will be completed by Toronto Yacht Club. Any other services are the responsibility of the vessel owner.</li>
+              <li>A deposit may be required based on the services selected. Toronto Yacht Club will contact you directly if that's the case.</li>
+            </ul>
+            <label class="auth-check"><input type="checkbox" name="authorization" value="Accepted" required> I accept the terms above</label>
+          </div>
+
+          <div class="form-submit" style="margin-top:1.5rem;"><button type="submit" class="btn btn-primary btn-large">Submit Service Request</button></div>
+        </form>
+
+        <!-- Success message -->
+        <div class="form-success" id="form-success"><h3>Thank You!</h3><p>We've received your service request and will get back to you within 24 hours. Call <a href="tel:2893250457">289-325-0457</a> for immediate assistance.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark" style="padding:3rem 0;"><div class="container" style="text-align:center;"><h2 style="margin-bottom:0.5rem;">Questions Before Booking?</h2><p style="margin-bottom:1.5rem; font-size:1.05rem;">Give us a call or send a quick inquiry — no obligation.</p><div class="hero-ctas" style="justify-content:center;"><a href="/inquiries#estimate" class="btn btn-primary btn-large">Get a Free Estimate</a><a href="tel:2893250457" class="btn btn-secondary btn-large">Call 289-325-0457</a></div></div></section>
+
+  <footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-col"><h4>Toronto Yacht Club</h4><p>Professional marine detailing and repair serving the Greater Toronto Area since 2016.</p><div class="social-icons" style="margin-top:1rem;"><a href="https://www.facebook.com/share/1Hj6jngaML/?mibextid=wwXIfr" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a><a href="https://www.instagram.com/torontoyachtclub?igsh=enh2MmMycHd5amw4" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a></div></div><div class="footer-col"><h4>Quick Links</h4><ul class="footer-nav"><li><a href="/services">Services</a></li><li><a href="/history">About Us</a></li><li><a href="/ourwork">Our Work</a></li><li><a href="/inquiries">Contact / Inquiries</a></li><li><a href="/local-listings">Local Listings</a></li><li><a href="/sell-your-boat">Sell Your Yacht</a></li></ul></div><div class="footer-col"><h4>Contact</h4><address><a href="tel:2893250457">289-325-0457</a><br><a href="mailto:javier@torontoyachtclub.ca">javier@torontoyachtclub.ca</a><br><br>Mon–Sat: 8:00 AM – 6:00 PM</address></div><div class="footer-col"><h4>Locations</h4><address>Krates Marina — Keswick<br>Driftwood Cove — Port Severn<br>Grand Harbour — Brechin<br>Downtown Toronto</address></div></div><div class="footer-bottom">&copy; 2026 Toronto Yacht Club. All rights reserved.</div></div></footer>
+  <script src="/js/main.js"></script>
+  <script>
+    if(window.location.search.includes('submitted=true')){
+      document.getElementById('book-form').style.display='none';
+      document.getElementById('form-success').classList.add('show');
+    }
+  </script>
+</body>
+</html>

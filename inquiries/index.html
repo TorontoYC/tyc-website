@@ -9,40 +9,69 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .checkbox-group { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1.5rem; margin-top: 0.5rem; }
+    .checkbox-group label { display: flex; align-items: center; gap: 0.5rem; font-weight: 400; cursor: pointer; font-size: 0.95rem; }
+    .checkbox-group input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--gold, #c8a84e); flex-shrink: 0; }
+    @media (max-width: 600px) { .checkbox-group { grid-template-columns: 1fr; } }
+    .file-upload-note { font-size: 0.85rem; color: var(--text-light, #777); margin-top: 0.35rem; }
+  </style>
 </head>
 <body>
   <header class="site-header"><div class="container header-top"><a href="/" class="logo"><span>Toronto Yacht Club</span></a>
-      <div class="header-ctas"><a href="/inquiries#estimate" class="btn btn-secondary">Get Estimate</a><a href="/inquiries#book" class="btn btn-primary">Book Now</a></div><button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button></div><nav class="main-nav" id="main-nav"><div class="container"><ul class="nav-list"><li><a href="/">Home</a></li><li><a href="/services">Services</a></li><li><a href="/history">About Us</a></li><li><a href="/ourwork">Our Work</a></li><li><a href="/inquiries" class="active">Contact</a></li><li><a href="/local-listings">Local Listings</a></li><li><a href="/sell-your-boat">Sell Your Yacht</a></li></ul></div></nav></header>
+      <div class="header-ctas"><a href="/inquiries#estimate" class="btn btn-secondary">Get Estimate</a><a href="/book" class="btn btn-primary">Book Now</a></div><button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button></div><nav class="main-nav" id="main-nav"><div class="container"><ul class="nav-list"><li><a href="/">Home</a></li><li><a href="/services">Services</a></li><li><a href="/history">About Us</a></li><li><a href="/ourwork">Our Work</a></li><li><a href="/inquiries" class="active">Contact</a></li><li><a href="/local-listings">Local Listings</a></li><li><a href="/sell-your-boat">Sell Your Yacht</a></li></ul></div></nav></header>
 
   <section class="hero" style="padding:3rem 0 2.5rem;"><div class="container"><div class="hero-content"><p class="section-label">Get In Touch</p><h1>Contact &amp; Inquiries</h1><p>Call us at <a href="tel:2893250457" style="color:var(--gold);">289-325-0457</a> or fill out the form below. We typically respond within 24 hours.</p></div></div></section>
 
   <section class="section" id="estimate">
     <div class="container">
       <div class="form-container" id="inquiry-form-container">
-        <div class="form-header" id="form-header"><h2>Get a Free Estimate</h2><p>Tell us about your vessel and what you need — no obligation.</p></div>
+        <div class="form-header"><h2>Get a Free Estimate</h2><p>Tell us about your vessel and what you need — no obligation.</p></div>
 
-        <!-- Formsubmit.co: sends to javier@, CC's nick@ -->
-        <form id="inquiry-form" action="https://formsubmit.co/javier@torontoyachtclub.ca" method="POST">
+        <form id="inquiry-form" action="https://formsubmit.co/javier@torontoyachtclub.ca" method="POST" enctype="multipart/form-data">
           <!-- Formsubmit config -->
           <input type="hidden" name="_cc" value="nick@torontoyachtclub.ca">
-          <input type="hidden" name="_subject" value="New TYC Inquiry">
-          <input type="hidden" name="_next" value="https://tyc-website.vercel.app/inquiries?submitted=true">
+          <input type="hidden" name="_subject" value="New TYC Estimate Request">
+          <input type="hidden" name="_next" value="https://torontoyachtclub.ca/inquiries?submitted=true">
           <input type="hidden" name="_captcha" value="true">
           <input type="hidden" name="_template" value="table">
           <input type="text" name="_honey" style="display:none">
-          <input type="hidden" name="form_type" id="form_type" value="estimate">
 
           <div class="form-row">
             <div class="form-group"><label for="name">Full Name *</label><input type="text" id="name" name="name" required placeholder="Your name"></div>
             <div class="form-group"><label for="phone">Phone Number *</label><input type="tel" id="phone" name="phone" required placeholder="289-000-0000"></div>
           </div>
           <div class="form-group"><label for="email">Email Address *</label><input type="email" id="email" name="email" required placeholder="you@example.com"></div>
-          <div class="form-row">
-            <div class="form-group"><label for="boat_info">Boat Make / Model / Size</label><input type="text" id="boat_info" name="boat_info" placeholder="e.g. Sea Ray Sundancer 370"></div>
-            <div class="form-group"><label for="service">Service Needed</label><select id="service" name="service"><option value="">Select a service…</option><option value="Interior Detailing">Interior Detailing</option><option value="Exterior Detailing / Deck & Hull">Exterior Detailing / Deck & Hull</option><option value="Polishing, Waxing & Compound">Polishing, Waxing & Compound</option><option value="Fiberglass & Gel Coat Repair">Fiberglass & Gel Coat Repair</option><option value="Canvas, Awnings & Upholstery">Canvas, Awnings & Upholstery</option><option value="Propeller & Lower Unit Repair">Propeller & Lower Unit Repair</option><option value="Synthetic Teak Decking">Synthetic Teak Decking</option><option value="Bottom Antifouling Paint">Bottom Antifouling Paint</option><option value="Winterization / Shrink Wrap">Winterization / Shrink Wrap</option><option value="Spring Launch">Spring Launch</option><option value="Other">Other</option></select></div>
+          <div class="form-group"><label for="boat_info">Boat Make / Model / Size</label><input type="text" id="boat_info" name="boat_info" placeholder="e.g. Sea Ray Sundancer 370"></div>
+
+          <div class="form-group">
+            <label>Services Needed <span style="font-weight:400; color:var(--text-light, #777);">(select all that apply)</span></label>
+            <div class="checkbox-group">
+              <label><input type="checkbox" name="services" value="Interior Detailing"> Interior Detailing</label>
+              <label><input type="checkbox" name="services" value="Exterior Detailing / Deck & Hull"> Exterior Detailing / Deck &amp; Hull</label>
+              <label><input type="checkbox" name="services" value="Polishing, Waxing & Compound"> Polishing, Waxing &amp; Compound</label>
+              <label><input type="checkbox" name="services" value="Vinyl Wrap"> Vinyl Wrap</label>
+              <label><input type="checkbox" name="services" value="Fiberglass & Gel Coat Repair"> Fiberglass &amp; Gel Coat Repair</label>
+              <label><input type="checkbox" name="services" value="Canvas, Awnings & Upholstery"> Canvas, Awnings &amp; Upholstery</label>
+              <label><input type="checkbox" name="services" value="Lower Unit Repair"> Lower Unit Repair</label>
+              <label><input type="checkbox" name="services" value="SeaDek Flooring"> SeaDek Flooring</label>
+              <label><input type="checkbox" name="services" value="Bottom Paint"> Bottom Paint</label>
+              <label><input type="checkbox" name="services" value="Winterization / Shrink Wrap"> Winterization / Shrink Wrap</label>
+              <label><input type="checkbox" name="services" value="Spring Launch"> Spring Launch</label>
+              <label><input type="checkbox" name="services" value="Other"> Other</label>
+            </div>
           </div>
+
           <div class="form-group"><label for="location">Preferred Location</label><select id="location" name="location"><option value="">Select a location…</option><option value="Krates Marina — Keswick">Krates Marina — Keswick</option><option value="Driftwood Cove — Port Severn">Driftwood Cove — Port Severn</option><option value="Grand Harbour Marina — Brechin">Grand Harbour Marina — Brechin</option><option value="Downtown Toronto — Harbourfront">Downtown Toronto — Harbourfront</option><option value="Flexible / Not Sure">Flexible / Not Sure</option></select></div>
+
           <div class="form-group"><label for="message">Message / Additional Details</label><textarea id="message" name="message" rows="5" placeholder="Anything else we should know…"></textarea></div>
+
+          <div class="form-group">
+            <label for="photos">Photos <span style="font-weight:400; color:var(--text-light, #777);">(optional)</span></label>
+            <input type="file" id="photos" name="attachment" accept="image/*" multiple>
+            <p class="file-upload-note">Upload photos of your vessel or the area that needs work. Max 5 MB per file.</p>
+          </div>
+
           <div class="form-submit"><button type="submit" class="btn btn-primary btn-large">Send Inquiry</button></div>
         </form>
 
@@ -51,7 +80,6 @@
       </div>
     </div>
   </section>
-  <span id="book"></span>
 
   <section class="section section-alt"><div class="container"><div class="section-header"><p class="section-label">Other Ways to Reach Us</p><h2>Contact Details</h2></div><div class="locations-grid">
     <div class="location-card"><h3>Phone</h3><p><a href="tel:2893250457" style="font-size:1.15rem;font-weight:600;">289-325-0457</a></p><p style="color:var(--text-light);font-size:0.9rem;margin-top:0.25rem;">Mon–Sat: 8:00 AM – 6:00 PM</p></div>
@@ -65,10 +93,6 @@
   <footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-col"><h4>Toronto Yacht Club</h4><p>Professional marine detailing and repair serving the Greater Toronto Area since 2016.</p><div class="social-icons" style="margin-top:1rem;"><a href="https://www.facebook.com/share/1Hj6jngaML/?mibextid=wwXIfr" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a><a href="https://www.instagram.com/torontoyachtclub?igsh=enh2MmMycHd5amw4" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a></div></div><div class="footer-col"><h4>Quick Links</h4><ul class="footer-nav"><li><a href="/services">Services</a></li><li><a href="/history">About Us</a></li><li><a href="/ourwork">Our Work</a></li><li><a href="/inquiries">Contact / Inquiries</a></li><li><a href="/local-listings">Local Listings</a></li><li><a href="/sell-your-boat">Sell Your Yacht</a></li></ul></div><div class="footer-col"><h4>Contact</h4><address><a href="tel:2893250457">289-325-0457</a><br><a href="mailto:javier@torontoyachtclub.ca">javier@torontoyachtclub.ca</a><br><br>Mon–Sat: 8:00 AM – 6:00 PM</address></div><div class="footer-col"><h4>Locations</h4><address>Krates Marina — Keswick<br>Driftwood Cove — Port Severn<br>Grand Harbour — Brechin<br>Downtown Toronto</address></div></div><div class="footer-bottom">&copy; 2026 Toronto Yacht Club. All rights reserved.</div></div></footer>
   <script src="/js/main.js"></script>
   <script>
-    // Handle #book hash
-    function updateFormHeader(){var h=window.location.hash,hdr=document.getElementById('form-header'),ft=document.getElementById('form_type');if(h==='#book'){hdr.innerHTML='<h2>Book a Service</h2><p>Ready to go? Tell us what you need and we\'ll get you scheduled.</p>';ft.value='booking';}else{hdr.innerHTML='<h2>Get a Free Estimate</h2><p>Tell us about your vessel and what you need — no obligation.</p>';ft.value='estimate';}}
-    updateFormHeader();window.addEventListener('hashchange',updateFormHeader);
-
     // Show success message if redirected back after form submit
     if(window.location.search.includes('submitted=true')){
       document.getElementById('inquiry-form').style.display='none';
@@ -77,4 +101,3 @@
   </script>
 </body>
 </html>
-
