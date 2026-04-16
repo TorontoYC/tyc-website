@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Boat Repair &amp; Detailing in Keswick | Toronto Yacht Club</title>
+  <meta name="description" content="Professional boat repair and detailing at Krates Marina in Keswick. Fiberglass, gel coat, canvas, detailing, vinyl wrap, and more. Call 289-325-0457.">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/images/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0B1D33;
+      --navy-light: #132C4A;
+      --navy-mid: #1A3A5C;
+      --blue: #2E6DA4;
+      --cream: #F7F5F0;
+      --white: #FFFFFF;
+      --gold: #C49A3C;
+      --gold-light: #D4AF5E;
+      --text: #1E1E1E;
+      --text-light: #5A5A5A;
+      --text-on-dark: #E0E6EC;
+      --border: #D8DDE3;
+      --shadow: rgba(11, 29, 51, 0.12);
+      --shadow-heavy: rgba(11, 29, 51, 0.22);
+      --radius: 6px;
+      --max-width: 1200px;
+      --transition: 0.25s ease;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: 'Source Sans 3', 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    a { color: var(--blue); text-decoration: none; transition: color var(--transition); }
+    a:hover { color: var(--gold); }
+
+    h1, h2, h3, h4 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      color: var(--navy);
+      line-height: 1.2;
+      font-weight: 400;
+    }
+    h1 { font-size: clamp(2rem, 5vw, 3.2rem); }
+    h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
+    h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); }
+    h4 { font-size: 1.1rem; }
+
+    .container { width: 90%; max-width: var(--max-width); margin: 0 auto; }
+
+    .section-label {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.5rem;
+    }
+
+    /* ===== STRIPPED HEADER ===== */
+    .lp-header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--navy);
+      box-shadow: 0 2px 12px var(--shadow-heavy);
+    }
+    .lp-header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.75rem 0; gap: 0.75rem;
+    }
+    .lp-logo { display: flex; align-items: center; }
+    .lp-logo img { height: 52px; width: auto; display: block; }
+    .lp-phone-link {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      background: var(--gold); color: var(--navy);
+      padding: 0.6rem 1.1rem; border-radius: var(--radius);
+      font-weight: 700; font-size: 1rem;
+      transition: background var(--transition);
+      white-space: nowrap;
+    }
+    .lp-phone-link:hover { background: var(--gold-light); color: var(--navy); }
+    .lp-phone-link svg { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
+
+    /* ===== HERO ===== */
+    .lp-hero {
+      position: relative; min-height: 70vh;
+      display: flex; align-items: center;
+      color: var(--white); overflow: hidden;
+      padding: 4rem 0;
+      text-align: center;
+    }
+    .lp-hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('/images/HeroShot.jpg');
+      background-size: cover; background-position: center; background-repeat: no-repeat;
+    }
+    .lp-hero-bg::after {
+      content: ''; position: absolute; inset: 0;
+      background: rgba(11, 29, 51, 0.62);
+    }
+    .lp-hero .container { position: relative; z-index: 2; }
+    .lp-hero h1 {
+      color: var(--white); margin-bottom: 1rem;
+      font-size: clamp(2.2rem, 6vw, 3.8rem);
+      text-shadow: 0 2px 12px rgba(0,0,0,0.35);
+    }
+    .lp-hero-sub {
+      font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+      color: rgba(255,255,255,0.92);
+      margin-bottom: 2.2rem;
+      max-width: 720px; margin-left: auto; margin-right: auto;
+    }
+    .lp-hero-ctas {
+      display: flex; gap: 0.85rem; flex-wrap: wrap; justify-content: center;
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-block; padding: 0.85rem 1.8rem;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 1rem; font-weight: 700;
+      border-radius: var(--radius); border: 2px solid transparent;
+      cursor: pointer; transition: all var(--transition);
+      text-align: center; white-space: nowrap;
+    }
+    .btn-primary { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+    .btn-primary:hover { background: var(--gold-light); border-color: var(--gold-light); color: var(--navy); }
+    .btn-secondary { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.7); }
+    .btn-secondary:hover { background: var(--white); color: var(--navy); border-color: var(--white); }
+    .btn-block { width: 100%; }
+
+    /* ===== SECTIONS ===== */
+    .section { padding: 3.5rem 0; }
+    .section-alt { background: var(--cream); }
+    .section-dark { background: var(--navy); color: var(--text-on-dark); }
+    .section-dark h2, .section-dark h3, .section-dark h4 { color: var(--white); }
+    .section-header { text-align: center; max-width: 720px; margin: 0 auto 2.5rem; }
+    .section-header p { color: var(--text-light); margin-top: 0.6rem; font-size: 1.05rem; }
+
+    /* ===== SERVICE BLOCKS ===== */
+    .service-blocks {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .service-block {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--gold);
+      border-radius: var(--radius);
+      padding: 2rem 1.75rem;
+      box-shadow: 0 2px 10px var(--shadow);
+    }
+    .service-block h3 { margin-bottom: 1rem; font-size: 1.55rem; }
+    .service-block ul { list-style: none; margin: 0 0 1.25rem 0; padding: 0; }
+    .service-block li {
+      padding: 0.45rem 0 0.45rem 1.5rem;
+      position: relative;
+      font-size: 0.98rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .service-block li:last-child { border-bottom: none; }
+    .service-block li::before {
+      content: '';
+      position: absolute; left: 0; top: 50%;
+      width: 8px; height: 8px;
+      background: var(--gold);
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
+    .service-block p { color: var(--text-light); font-size: 0.95rem; line-height: 1.65; }
+
+    /* ===== TRUST STRIP ===== */
+    .trust-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      text-align: center;
+    }
+    .trust-item { padding: 0.75rem; }
+    .trust-number {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      color: var(--gold);
+      line-height: 1.1;
+      margin-bottom: 0.35rem;
+    }
+    .trust-label {
+      font-size: 0.88rem;
+      letter-spacing: 0.05em;
+      color: var(--text-on-dark);
+    }
+
+    /* ===== FORM ===== */
+    .form-container {
+      max-width: 640px; margin: 0 auto;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.25rem 2rem;
+      box-shadow: 0 4px 20px var(--shadow);
+    }
+    .form-header { text-align: center; margin-bottom: 1.75rem; }
+    .form-header p { color: var(--text-light); margin-top: 0.4rem; }
+    .form-group { margin-bottom: 1.1rem; }
+    .form-group label {
+      display: block; font-weight: 600; font-size: 0.88rem;
+      margin-bottom: 0.35rem; color: var(--navy);
+    }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 0.75rem 0.85rem;
+      border: 1px solid var(--border); border-radius: var(--radius);
+      font-family: inherit; font-size: 1rem; color: var(--text);
+      background: var(--white); transition: border-color var(--transition);
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline: none; border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(46,109,164,0.12);
+    }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-submit { text-align: center; margin-top: 1.5rem; }
+    .form-thanks {
+      max-width: 640px; margin: 0 auto 1.5rem;
+      background: #E6F4EA; border: 1px solid #86C19C;
+      color: #1F5632; padding: 1.25rem 1.5rem;
+      border-radius: var(--radius);
+      text-align: center;
+    }
+    .form-thanks strong { color: #143B21; }
+    .form-thanks a { color: #143B21; font-weight: 700; text-decoration: underline; }
+
+    /* ===== LOCATION BLOCK ===== */
+    .location-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: stretch;
+    }
+    .location-info address {
+      font-style: normal;
+      font-size: 1.05rem;
+      line-height: 1.85;
+    }
+    .location-info address strong { color: var(--navy); }
+    .location-info .lp-phone-big {
+      display: inline-block;
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.75rem;
+      color: var(--gold);
+      margin-top: 0.75rem;
+    }
+    .location-map {
+      border-radius: var(--radius);
+      overflow: hidden;
+      min-height: 320px;
+      border: 1px solid var(--border);
+    }
+    .location-map iframe {
+      width: 100%; height: 100%; min-height: 320px; border: 0; display: block;
+    }
+
+    /* ===== FOOTER ===== */
+    .lp-footer {
+      background: var(--navy); color: var(--text-on-dark);
+      padding: 2rem 0 1.25rem;
+      text-align: center;
+    }
+    .lp-footer h4 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      color: var(--white);
+      font-size: 1.2rem; margin-bottom: 0.5rem;
+    }
+    .lp-footer a { color: var(--text-on-dark); }
+    .lp-footer a:hover { color: var(--gold); }
+    .lp-footer .lp-footer-phone {
+      font-size: 1.15rem; font-weight: 700; color: var(--gold); letter-spacing: 0.02em;
+    }
+    .lp-footer .lp-footer-phone:hover { color: var(--gold-light); }
+    .lp-footer-links {
+      margin: 0.75rem 0 1rem;
+      font-size: 0.9rem;
+    }
+    .lp-footer-copy {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1rem; margin-top: 1rem;
+      font-size: 0.8rem; color: rgba(255,255,255,0.45);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .service-blocks { grid-template-columns: 1fr; }
+      .trust-strip { grid-template-columns: 1fr 1fr; gap: 1.25rem 1rem; }
+      .location-wrap { grid-template-columns: 1fr; }
+      .lp-header-inner { padding: 0.6rem 0; }
+      .lp-logo img { height: 42px; }
+      .lp-phone-link { padding: 0.5rem 0.85rem; font-size: 0.92rem; }
+      .lp-hero { min-height: 60vh; padding: 3rem 0; }
+      .form-container { padding: 1.75rem 1.25rem; }
+    }
+
+    @media (max-width: 480px) {
+      .lp-logo img { height: 36px; }
+      .lp-phone-link { padding: 0.5rem 0.75rem; font-size: 0.88rem; }
+      .lp-phone-link svg { width: 14px; height: 14px; }
+      .lp-hero-ctas { flex-direction: column; align-items: stretch; }
+      .lp-hero-ctas .btn { width: 100%; }
+      .section { padding: 2.5rem 0; }
+    }
+
+    /* ===== GA CONVERSION: highlight phone on tap ===== */
+    @media (hover: none) {
+      .lp-phone-link:active { background: var(--gold-light); }
+    }
+  </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7YTZPD04CC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7YTZPD04CC');
+  </script>
+</head>
+<body>
+
+  <header class="lp-header">
+    <div class="container lp-header-inner">
+      <a href="#" class="lp-logo" aria-label="Toronto Yacht Club">
+        <img src="/images/tyc-logo-white-header.png" alt="Toronto Yacht Club">
+      </a>
+      <a href="tel:2893250457" class="lp-phone-link" aria-label="Call Toronto Yacht Club at 289-325-0457">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.7-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.4-1.2-.6-2.4-.6-3.6 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z"/></svg>
+        <span>289-325-0457</span>
+      </a>
+    </div>
+  </header>
+
+  <section class="lp-hero">
+    <div class="lp-hero-bg" role="presentation"></div>
+    <div class="container">
+      <h1>Boat Repair &amp; Detailing in Keswick</h1>
+      <p class="lp-hero-sub" id="lp-hero-sub">Located at Krates Marina. 9+ years serving Lake Simcoe boaters.</p>
+      <div class="lp-hero-ctas">
+        <a href="tel:2893250457" class="btn btn-primary">Call 289-325-0457</a>
+        <a href="#estimate-form" class="btn btn-secondary">Get Free Estimate</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Our Services</p>
+        <h2>Full-Service Marine Care in Keswick</h2>
+        <p>From gel coat repairs to 5-year ceramic coatings — our Krates Marina team handles it all.</p>
+      </div>
+      <div class="service-blocks" id="service-blocks">
+
+        <article class="service-block" data-service="repair" id="block-repair">
+          <h3>Boat Repair</h3>
+          <ul>
+            <li>Fiberglass &amp; Gel Coat Repair</li>
+            <li>Custom Canvas, Awnings &amp; Upholstery</li>
+            <li>Lower Unit Repairs</li>
+            <li>SeaDek Flooring</li>
+            <li>Bottom Paint</li>
+          </ul>
+          <p>From minor gel coat scratches to full canvas replacements, our Keswick team handles it all. We work with aluminium, stainless steel, mercalloy, and bronze.</p>
+        </article>
+
+        <article class="service-block" data-service="detailing" id="block-detailing">
+          <h3>Boat Detailing</h3>
+          <ul>
+            <li>Interior Detailing (Cockpit &amp; Cabin)</li>
+            <li>Deck &amp; Hull Bath</li>
+            <li>Polishing, Waxing &amp; Compound</li>
+            <li>Vinyl Wrap (3M, Avery Dennison, PPF Film)</li>
+            <li>Ceramic Coating</li>
+          </ul>
+          <p>Make your boat look showroom-new. We offer everything from pressure washing to 5-year ceramic coating, plus custom vinyl wrap designs.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="container">
+      <div class="trust-strip">
+        <div class="trust-item">
+          <div class="trust-number">100,000 sq/ft</div>
+          <div class="trust-label">Workspace</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-number">4 Locations</div>
+          <div class="trust-label">Across Ontario</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-number">9+ Years</div>
+          <div class="trust-label">In Business</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-number">Mon-Sat 8-6</div>
+          <div class="trust-label">Open 6 Days</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Free Quote</p>
+        <h2>Get a Free Estimate</h2>
+        <p>Tell us about your boat and what you need — we'll respond within 24 hours.</p>
+      </div>
+
+      <div class="form-thanks" id="form-thanks" style="display:none;">
+        <strong>Thanks!</strong> We'll be in touch within 24 hours. For urgent inquiries, call <a href="tel:2893250457">289-325-0457</a>.
+      </div>
+
+      <div class="form-container">
+        <form id="estimate-form" action="https://formsubmit.co/javier@torontoyachtclub.ca" method="POST">
+          <input type="hidden" name="_cc" value="nick@torontoyachtclub.ca">
+          <input type="hidden" name="_subject" value="New Estimate Request from Keswick Landing Page">
+          <input type="hidden" name="_next" value="https://torontoyachtclub.ca/boat-service-keswick.html?submitted=true">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+          <div class="form-group">
+            <label for="f-name">Full Name *</label>
+            <input type="text" id="f-name" name="name" required autocomplete="name" placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label for="f-phone">Phone *</label>
+            <input type="tel" id="f-phone" name="phone" required autocomplete="tel" placeholder="289-000-0000">
+          </div>
+          <div class="form-group">
+            <label for="f-email">Email *</label>
+            <input type="email" id="f-email" name="email" required autocomplete="email" placeholder="you@example.com">
+          </div>
+          <div class="form-group">
+            <label for="f-service">Service Needed</label>
+            <select id="f-service" name="service_needed">
+              <option value="Boat Repair">Boat Repair</option>
+              <option value="Boat Detailing">Boat Detailing</option>
+              <option value="Both">Both</option>
+              <option value="Not Sure">Not Sure</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="f-message">Brief description <span style="font-weight:400;color:var(--text-light);">(optional)</span></label>
+            <textarea id="f-message" name="message" placeholder="What does your boat need?"></textarea>
+          </div>
+          <div class="form-submit">
+            <button type="submit" class="btn btn-primary btn-block">Request Estimate</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Find Us</p>
+        <h2>Visit Us in Keswick</h2>
+      </div>
+      <div class="location-wrap">
+        <div class="location-info">
+          <h3 style="margin-bottom:0.75rem;">Krates Marina</h3>
+          <address>
+            <strong>290 The Queensway S</strong><br>
+            Keswick, ON L4P 2B3<br><br>
+            <strong>Hours:</strong> Mon-Sat 8:00 AM – 6:00 PM<br>
+            <strong>Email:</strong> <a href="mailto:javier@torontoyachtclub.ca">javier@torontoyachtclub.ca</a>
+          </address>
+          <a href="tel:2893250457" class="lp-phone-big">289-325-0457</a>
+        </div>
+        <div class="location-map">
+          <iframe
+            src="https://www.google.com/maps?q=Krates+Marina+290+The+Queensway+S+Keswick+ON&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Krates Marina — 290 The Queensway S, Keswick ON"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="lp-footer">
+    <div class="container">
+      <h4>Toronto Yacht Club</h4>
+      <div><a href="tel:2893250457" class="lp-footer-phone">289-325-0457</a></div>
+      <div class="lp-footer-links"><a href="/">Visit main site &rarr;</a></div>
+      <div class="lp-footer-copy">&copy; 2026 Toronto Yacht Club. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      var params = new URLSearchParams(window.location.search);
+      var service = (params.get('service') || '').toLowerCase();
+      var sub = document.getElementById('lp-hero-sub');
+      var wrap = document.getElementById('service-blocks');
+      var repair = document.getElementById('block-repair');
+      var detailing = document.getElementById('block-detailing');
+      var select = document.getElementById('f-service');
+
+      if (service === 'repair') {
+        if (sub) sub.textContent = 'Located at Krates Marina. Repair Specialists — 9+ years serving Lake Simcoe boaters.';
+        if (wrap && repair && detailing) { wrap.insertBefore(repair, detailing); }
+        if (select) select.value = 'Boat Repair';
+      } else if (service === 'detailing') {
+        if (sub) sub.textContent = 'Located at Krates Marina. Detailing Specialists — 9+ years serving Lake Simcoe boaters.';
+        if (wrap && detailing && repair) { wrap.insertBefore(detailing, repair); }
+        if (select) select.value = 'Boat Detailing';
+      }
+
+      if (params.get('submitted') === 'true') {
+        var thanks = document.getElementById('form-thanks');
+        if (thanks) {
+          thanks.style.display = 'block';
+          thanks.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
