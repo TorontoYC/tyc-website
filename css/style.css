@@ -320,7 +320,8 @@ h4 { font-size: 1.1rem; }
   }
 
   .social-icons { display: none !important; visibility: hidden; width: 0; height: 0; overflow: hidden; }
-  .logo-img { height: 40px; }
+  .logo span { display: none; }
+  .logo-img { height: 48px; }
   .hero { padding: 3.5rem 0 3rem; }
   .hero-fullscreen { min-height: 70vh; }
   .form-row { grid-template-columns: 1fr; }
