@@ -32,12 +32,11 @@
     }
     .canvas-hero .hero-bg {
       position: absolute; inset: 0;
-      background-image: url('/images/canvas/tyc-canvas-hero.jpg');
-      background-size: cover; background-position: center; background-repeat: no-repeat;
     }
     .canvas-hero .hero-bg::after {
       content: ''; position: absolute; inset: 0;
       background: rgba(11, 29, 51, 0.58);
+      z-index: 1;
     }
     .canvas-hero .container { position: relative; z-index: 2; max-width: 860px; }
     .canvas-hero h1 {
@@ -173,7 +172,11 @@
   </header>
 
   <section class="canvas-hero">
-    <div class="hero-bg" role="presentation"></div>
+    <div class="hero-bg" role="presentation">
+      <picture>
+        <img src="/images/canvas/tyc-canvas-hero.jpg" alt="" class="hero-bg-img" fetchpriority="high" width="1920" height="1440">
+      </picture>
+    </div>
     <div class="container">
       <h1>Marine Canvas &amp; Upholstery in Keswick &mdash; Built for Boats</h1>
       <p class="hero-sub">Custom bimini tops, boat covers, enclosures, dodgers, seat re-upholstery, and interior cushions. Marine canvas specialists &mdash; not a general upholstery shop that also takes boats. On-site at Krates Marina in Keswick, serving Lake Simcoe, Georgina, Sutton, Newmarket, Aurora, and Barrie-area boat owners since 2017.</p>
