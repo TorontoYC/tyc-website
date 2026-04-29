@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boat Detailing | Toronto Yacht Club</title>
+  <meta name="description" content="Marine detailing across the GTA — hull wash, polish, wax, ceramic coating, and full interior detailing. 4 shops, 100,000 sq/ft of workspace. Real shop, real team — not a mobile drive-by. Serving boat owners since 2017.">
+  <meta property="og:title" content="Boat Detailing | Toronto Yacht Club">
+  <meta property="og:description" content="Marine detailing across the GTA — hull wash, polish, wax, ceramic coating, and full interior detailing. 4 shops, 100,000 sq/ft of workspace. Real shop, real team — not a mobile drive-by. Serving boat owners since 2017.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://torontoyachtclub.ca/services/detailing">
+  <meta property="og:image" content="https://torontoyachtclub.ca/images/detailing/tyc-detailing-hero.jpg">
+  <link rel="canonical" href="https://torontoyachtclub.ca/services/detailing">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;500;600;700&display=swap"></noscript>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/images/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/images/favicon.png">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Service","name":"Boat Detailing","serviceType":"Boat Detailing","description":"Marine detailing across the GTA — hull wash, polish, wax, ceramic coating, and full interior detailing. 4 shops, 100,000 sq/ft of workspace. Real shop, real team — not a mobile drive-by. Serving boat owners since 2017.","url":"https://torontoyachtclub.ca/services/detailing","image":"https://torontoyachtclub.ca/images/detailing/tyc-detailing-hero.jpg","areaServed":["Toronto","Greater Toronto Area","Lake Simcoe","Georgian Bay","Keswick","Brechin","Port Severn","Sutton","Newmarket","Aurora","Barrie"],"provider":{"@type":"Organization","name":"Toronto Yacht Club","url":"https://torontoyachtclub.ca","telephone":"+1-289-325-0457","email":"javier@torontoyachtclub.ca","foundingDate":"2017","logo":"https://torontoyachtclub.ca/images/tyc-logo-white-footer.png","location":[{"@type":"Place","name":"Krates Marina — Keswick","address":{"@type":"PostalAddress","streetAddress":"290 The Queensway S","addressLocality":"Keswick","addressRegion":"ON","postalCode":"L4P 2B3","addressCountry":"CA"}},{"@type":"Place","name":"Driftwood Cove Marine Resort — Port Severn","address":{"@type":"PostalAddress","streetAddress":"93 Port Severn Rd N","addressLocality":"Port Severn","addressRegion":"ON","postalCode":"L0K 1S0","addressCountry":"CA"}},{"@type":"Place","name":"Grand Harbour Marina — Brechin","address":{"@type":"PostalAddress","streetAddress":"150 Laguna Pkwy","addressLocality":"Brechin","addressRegion":"ON","postalCode":"L0K 1B0","addressCountry":"CA"}},{"@type":"Place","name":"Toronto — Unwin Avenue","address":{"@type":"PostalAddress","streetAddress":"475 Unwin Avenue","addressLocality":"Toronto","addressRegion":"ON","postalCode":"M4M 3M2","addressCountry":"CA"}}]}}
+  </script>
+  <style>
+    /* Page-specific: detailing hero + layout tweaks */
+    .detailing-hero {
+      position: relative; min-height: 62vh;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; color: var(--white); overflow: hidden; padding: 4rem 0;
+    }
+    .detailing-hero .hero-bg { position: absolute; inset: 0; }
+    .detailing-hero .hero-bg::after {
+      content: ''; position: absolute; inset: 0;
+      background: rgba(11, 29, 51, 0.58);
+      z-index: 1;
+    }
+    .detailing-hero .container { position: relative; z-index: 2; max-width: 860px; }
+    .detailing-hero h1 {
+      color: var(--white); font-size: clamp(2rem, 5vw, 3.2rem);
+      margin-bottom: 1rem; text-shadow: 0 2px 12px rgba(0,0,0,0.35);
+    }
+    .detailing-hero .hero-sub {
+      font-size: clamp(1rem, 1.8vw, 1.15rem);
+      color: rgba(255,255,255,0.92);
+      margin-bottom: 1.75rem; line-height: 1.7;
+    }
+    .detailing-hero .hero-ctas { display: flex; gap: 0.85rem; flex-wrap: wrap; justify-content: center; }
+
+    /* Four-up service blocks (4 cols desktop, 2 cols tablet, 1 col mobile) */
+    .detailing-blocks { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+    .detailing-block {
+      background: var(--white); border: 1px solid var(--border);
+      border-top: 4px solid var(--gold); border-radius: var(--radius);
+      padding: 1.75rem 1.5rem; box-shadow: 0 2px 10px var(--shadow);
+    }
+    .detailing-block h3 { margin-bottom: 0.65rem; font-size: 1.15rem; }
+    .detailing-block p { color: var(--text-light); font-size: 0.95rem; line-height: 1.6; }
+    @media (max-width: 1100px) { .detailing-blocks { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .detailing-blocks { grid-template-columns: 1fr; } }
+
+    /* Prose sections */
+    .prose { max-width: 780px; margin: 0 auto; font-size: 1.05rem; line-height: 1.8; }
+    .prose p + p { margin-top: 1.1rem; }
+
+    /* Before/After feature panel */
+    .ba-panel { max-width: 1100px; margin: 0 auto; }
+    .ba-panel img {
+      width: 100%; height: auto; display: block;
+      border-radius: var(--radius); border: 1px solid var(--border);
+      box-shadow: 0 4px 18px var(--shadow);
+    }
+    .ba-caption {
+      text-align: center; margin-top: 1rem;
+      color: var(--text-light); font-size: 0.95rem; font-style: italic;
+    }
+
+    /* Why-choose bullets */
+    .why-list { max-width: 780px; margin: 0 auto; list-style: none; padding: 0; }
+    .why-list li {
+      padding: 0.7rem 0 0.7rem 1.75rem; position: relative;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      font-size: 1rem; line-height: 1.6;
+    }
+    .why-list li:last-child { border-bottom: none; }
+    .why-list li::before {
+      content: '\2713'; position: absolute; left: 0; top: 0.7rem;
+      color: var(--gold); font-weight: 700;
+    }
+
+    /* See Pricing strip */
+    .pricing-strip {
+      max-width: 780px; margin: 1.75rem auto 0;
+      text-align: center; font-size: 0.98rem; color: var(--text-light);
+    }
+    .pricing-strip a { font-weight: 600; }
+
+    /* Checkbox group (matches /inquiries pattern) */
+    .checkbox-group { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1.5rem; margin-top: 0.5rem; }
+    .checkbox-group label { display: flex; align-items: center; gap: 0.5rem; font-weight: 400; cursor: pointer; font-size: 0.95rem; }
+    .checkbox-group input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--gold); flex-shrink: 0; }
+    @media (max-width: 600px) { .checkbox-group { grid-template-columns: 1fr; } }
+    .file-upload-note { font-size: 0.85rem; color: var(--text-light); margin-top: 0.35rem; }
+
+    /* Success banner */
+    .submit-banner {
+      display: none;
+      max-width: 680px; margin: 0 auto 1.5rem;
+      background: #E6F4EA; border: 1px solid #86C19C;
+      color: #1F5632; padding: 1rem 1.25rem;
+      border-radius: var(--radius);
+      text-align: center; font-size: 1rem;
+    }
+    .submit-banner.show { display: block; }
+
+    /* Locations grid (4 shops) */
+    .locations-grid-detailing {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+    .location-card-detailing {
+      background: var(--white); border: 1px solid var(--border);
+      border-top: 4px solid var(--gold); border-radius: var(--radius);
+      padding: 1.5rem 1.25rem; box-shadow: 0 2px 10px var(--shadow);
+      display: flex; flex-direction: column;
+    }
+    .location-card-detailing h3 { margin-bottom: 0.35rem; font-size: 1.15rem; }
+    .location-card-detailing .geo {
+      color: var(--text-light); font-size: 0.9rem;
+      margin-bottom: 0.7rem; font-style: italic;
+    }
+    .location-card-detailing address {
+      font-style: normal; font-size: 0.95rem; line-height: 1.55;
+      color: var(--text); flex: 1;
+    }
+    @media (max-width: 1100px) { .locations-grid-detailing { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .locations-grid-detailing { grid-template-columns: 1fr; } }
+
+    /* FAQ */
+    .faq-list { max-width: 780px; margin: 0 auto; }
+    .faq-list details {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 0.75rem;
+    }
+    .faq-list summary {
+      cursor: pointer; font-weight: 600; font-size: 1.05rem;
+      color: var(--navy); list-style: none;
+    }
+    .faq-list summary::-webkit-details-marker { display: none; }
+    .faq-list summary::after { content: '+'; float: right; color: var(--gold); font-weight: 400; font-size: 1.4rem; line-height: 1; }
+    .faq-list details[open] summary::after { content: '\2013'; }
+    .faq-list details p { margin-top: 0.75rem; color: var(--text-light); line-height: 1.7; }
+  </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7YTZPD04CC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7YTZPD04CC');
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-top">
+      <a href="/" class="logo"><img src="/images/tyc-logo-white-header.png" alt="Toronto Yacht Club" class="logo-img" width="74" height="88"></a>
+      <div class="header-ctas">
+        <a href="#estimate" class="btn btn-secondary">Get Estimate</a>
+        <a href="/book" class="btn btn-primary">Book Now</a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+    </div>
+    <nav class="main-nav" id="main-nav">
+      <div class="container">
+        <ul class="nav-list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/services" class="active">Services</a></li>
+          <li><a href="/history">About Us</a></li>
+          <li><a href="/ourwork">Our Work</a></li>
+          <li><a href="/inquiries">Contact</a></li>
+          <li><a href="/local-listings">Local Listings</a></li>
+          <li><a href="/sell-your-boat">Sell Your Yacht</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <section class="detailing-hero">
+    <div class="hero-bg" role="presentation">
+      <picture>
+        <img src="/images/detailing/tyc-detailing-hero.jpg" alt="" class="hero-bg-img" fetchpriority="high" width="1920" height="960">
+      </picture>
+    </div>
+    <div class="container">
+      <h1>Boat Detailing &mdash; Real Shop, Real Team</h1>
+      <p class="hero-sub">Hull wash, polish, wax, ceramic coating, and full interior detailing. 4 shops across the GTA, 100,000 sq/ft of workspace. Real craftsmanship &mdash; not a mobile drive-by. Serving boat owners since 2017.</p>
+      <div class="hero-ctas">
+        <a href="#estimate" class="btn btn-primary btn-large">Get an Estimate</a>
+        <a href="tel:2893250457" class="btn btn-secondary btn-large">Call 289-325-0457</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">What We Do</p>
+        <h2>Marine Detailing, Top to Bottom</h2>
+      </div>
+      <div class="detailing-blocks">
+        <article class="detailing-block">
+          <h3>Wash, Polish &amp; Wax</h3>
+          <p>Multi-stage hull wash, machine polish to remove oxidation and surface defects, and marine-grade wax for season-long protection.</p>
+        </article>
+        <article class="detailing-block">
+          <h3>Ceramic Coating</h3>
+          <p>3-year and 5-year options. Hydrophobic, UV-resistant, and dramatically harder wear than wax &mdash; typically 6&times; to 10&times; longer between reapplications.</p>
+        </article>
+        <article class="detailing-block">
+          <h3>Interior Detailing</h3>
+          <p>Full cabin and cockpit deep clean, vinyl conditioning, carpet steam extraction, and headliner spot treatment.</p>
+        </article>
+        <article class="detailing-block">
+          <h3>Restoration &amp; Compound</h3>
+          <p>Heavy oxidation removal, gelcoat compounding, and recovery of sun-bleached or chalky hulls. Wet-sanding available for severe cases.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Why Marine Detailing Is Different</p>
+        <h2>Gelcoat, Sun, and Salt &mdash; Not Auto Paint</h2>
+      </div>
+      <div class="prose">
+        <p>Auto detailers are excellent at what they do. Auto detailing is not what your boat needs. The substrate is different, the environment is different, and the failure modes are different.</p>
+        <p>Boats use <strong>gelcoat</strong>, not painted finishes. Gelcoat is a thick pigmented resin layer that oxidizes from the outside in &mdash; chalking, dulling, then turning porous. Recovery is a multi-stage process: wash, compound, polish, then seal. A single buff doesn't solve it. The polishing chemistry, pad selection, and machine technique are also different from what works on automotive clear coat.</p>
+        <p>And the environment punishes everything. Salt, sun, and constant UV demand different wax and ceramic products than auto detailing supplies provide. Large flat surfaces &mdash; transoms, decks, hardtops &mdash; need machine-polishing technique adapted for fiberglass curvature, not the body panels of a car. The oxidation pattern on a 5-year-old gelcoat is fundamentally different from auto paint fade.</p>
+        <p>That's the work we do every day. Not auto detailing on a boat &mdash; marine detailing, with the right products, the right pads, and the right technique for the surface that's actually in front of us.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Before &amp; After</p>
+        <h2>Real Recovery Work</h2>
+      </div>
+      <div class="ba-panel">
+        <img src="/images/detailing/tyc-detailing-before-after-1.jpg" alt="Chris Craft teak deck before and after restoration — sun-bleached and dry on the left, fully restored and sealed on the right" loading="lazy" width="1400" height="1056">
+        <p class="ba-caption">Chris Craft teak deck restoration &mdash; sun-bleached and dry, fully restored and sealed.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Why TYC</p>
+        <h2>Why Choose TYC for Detailing</h2>
+      </div>
+      <ul class="why-list">
+        <li>Real shop, not a mobile setup &mdash; climate-controlled work areas, professional lighting, and a clean environment for ceramic and wax application</li>
+        <li>4 shops across the GTA &mdash; Keswick (Krates Marina), Port Severn (Driftwood Cove), Brechin (Grand Harbour), and Toronto (475 Unwin Ave). 100,000 sq/ft of total workspace</li>
+        <li>Marine-grade products only, every project &mdash; not auto detailing supplies repurposed for boats</li>
+        <li>Insured full-time team, not weekend operators</li>
+        <li>Serving boat owners since 2017</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Recent Work</p>
+        <h2>Photo Gallery</h2>
+        <p>Click any photo to enlarge.</p>
+      </div>
+      <div class="gallery-grid" id="gallery">
+        <div class="gallery-item"><img src="/images/detailing/tyc-detailing-process-1.jpg" alt="Multi-stage paint correction with the RUPES polisher" loading="lazy"></div>
+        <div class="gallery-item"><img src="/images/detailing/tyc-detailing-process-2.jpg" alt="Detailing in any season — TYC works year-round" loading="lazy"></div>
+        <div class="gallery-item"><img src="/images/detailing/tyc-detailing-tyc-team.jpg" alt="TYC team washing a Brabus" loading="lazy"></div>
+        <div class="gallery-item"><img src="/images/detailing/tyc-detailing-finished.jpg" alt="Finished Axopar ready for the season" loading="lazy"></div>
+      </div>
+      <p class="pricing-strip">TYC publishes per-foot detailing pricing on our online booking page. <a href="/book">See detailing pricing &rarr;</a></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Find Us</p>
+        <h2>Our Locations</h2>
+        <p>Pick the shop closest to where your boat lives &mdash; or tell us in the form and we'll route you to the right team.</p>
+      </div>
+      <div class="locations-grid-detailing">
+        <div class="location-card-detailing">
+          <h3>Krates Marina</h3>
+          <p class="geo">Lake Simcoe / Cooks Bay</p>
+          <address>
+            290 The Queensway S<br>
+            Keswick, ON L4P 2B3
+          </address>
+        </div>
+        <div class="location-card-detailing">
+          <h3>Driftwood Cove Marine Resort</h3>
+          <p class="geo">Georgian Bay</p>
+          <address>
+            93 Port Severn Rd N<br>
+            Port Severn, ON L0K 1S0
+          </address>
+        </div>
+        <div class="location-card-detailing">
+          <h3>Grand Harbour Marina</h3>
+          <p class="geo">Lake Simcoe / Lagoon City</p>
+          <address>
+            150 Laguna Pkwy<br>
+            Brechin, ON L0K 1B0
+          </address>
+        </div>
+        <div class="location-card-detailing">
+          <h3>Toronto</h3>
+          <p class="geo">Toronto waterfront</p>
+          <address>
+            475 Unwin Avenue<br>
+            Toronto, ON M4M 3M2
+          </address>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="estimate">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Free Quote</p>
+        <h2>Get an Estimate</h2>
+        <p>Tell us about your boat and what you need &mdash; Javier or Nick will follow up within 24 hours.</p>
+      </div>
+
+      <div class="submit-banner" id="submit-banner" role="status" aria-live="polite">
+        Thanks &mdash; your request has been received. Javier or Nick will be in touch within 24 hours.
+      </div>
+
+      <div class="form-container" id="detailing-form-container">
+        <form id="detailing-form" action="https://formsubmit.co/javier@torontoyachtclub.ca" method="POST" enctype="multipart/form-data">
+          <input type="hidden" name="_cc" value="nick@torontoyachtclub.ca">
+          <input type="hidden" name="_subject" value="Detailing Estimate — /services/detailing">
+          <input type="hidden" name="_next" value="https://torontoyachtclub.ca/services/detailing?submitted=true">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+          <div class="form-row">
+            <div class="form-group"><label for="name">Full Name *</label><input type="text" id="name" name="name" required autocomplete="name" placeholder="Your name"></div>
+            <div class="form-group"><label for="phone">Phone *</label><input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="289-000-0000"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label for="email">Email *</label><input type="email" id="email" name="email" required autocomplete="email" placeholder="you@example.com"></div>
+            <div class="form-group">
+              <label for="contact_method">Preferred Contact Method</label>
+              <select id="contact_method" name="contact_method">
+                <option value="No preference">No preference</option>
+                <option value="Phone">Phone</option>
+                <option value="Text">Text</option>
+                <option value="Email">Email</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group"><label for="boat_loa">Boat Length (LOA, ft)</label><input type="text" id="boat_loa" name="boat_loa" placeholder="e.g. 32"></div>
+            <div class="form-group"><label for="boat_info">Boat Make &amp; Model</label><input type="text" id="boat_info" name="boat_info" placeholder="e.g. Sea Ray Sundancer 370"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="preferred_location">Preferred Location *</label>
+            <select id="preferred_location" name="preferred_location" required>
+              <option value="">Select a location&hellip;</option>
+              <option value="Krates (Keswick)">Krates Marina &mdash; Keswick</option>
+              <option value="Driftwood Cove (Port Severn)">Driftwood Cove &mdash; Port Severn</option>
+              <option value="Grand Harbour (Brechin)">Grand Harbour &mdash; Brechin</option>
+              <option value="Toronto (Unwin Ave)">Toronto &mdash; Unwin Avenue</option>
+              <option value="No preference">No preference &mdash; route me to the closest</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>What Do You Need? <span style="font-weight:400;color:var(--text-light);">(select all that apply)</span></label>
+            <div class="checkbox-group">
+              <label><input type="checkbox" name="services" value="Wash, polish & wax"> Wash, polish &amp; wax</label>
+              <label><input type="checkbox" name="services" value="Ceramic coating (3-year)"> Ceramic coating (3-year)</label>
+              <label><input type="checkbox" name="services" value="Ceramic coating (5-year)"> Ceramic coating (5-year)</label>
+              <label><input type="checkbox" name="services" value="Interior detailing"> Interior detailing</label>
+              <label><input type="checkbox" name="services" value="Hull restoration / compound"> Hull restoration / compound</label>
+              <label><input type="checkbox" name="services" value="Other / not sure"> Other / not sure</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="photos">Photos <span style="font-weight:400;color:var(--text-light);">(optional)</span></label>
+            <input type="file" id="photos" name="attachment" accept="image/*" multiple>
+            <p class="file-upload-note">Photos of the existing condition help us quote more accurately. Max 5 MB per file.</p>
+          </div>
+
+          <div class="form-group"><label for="message">Details</label><textarea id="message" name="message" rows="5" placeholder="Condition of the gelcoat, timing, anything else we should know&hellip;"></textarea></div>
+
+          <div class="form-submit">
+            <button type="submit" class="btn btn-primary btn-large">Request Estimate</button>
+            <p class="file-upload-note" style="text-align:center;margin-top:0.85rem;">Javier or Nick will be in touch within 24 hours.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Common Questions</p>
+        <h2>FAQ</h2>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>What's the difference between a wash, a polish, and a ceramic coating?</summary>
+          <p>A <strong>wash</strong> is a surface clean &mdash; soap, rinse, dry. A <strong>polish</strong> is paint correction: machine-buffing the gelcoat with abrasive compound to remove oxidation, swirls, and light scratches, restoring the surface itself. A <strong>ceramic coating</strong> is a long-term hydrophobic protection layer that bonds to the gelcoat after polish, dramatically reducing water spotting, UV damage, and contamination buildup over multiple seasons. Wash maintains. Polish corrects. Ceramic protects.</p>
+        </details>
+        <details>
+          <summary>How long does a full detail take?</summary>
+          <p>1&ndash;3 days depending on size and condition. Light maintenance details can be same-day. A full compound + ceramic on a 30-foot cruiser typically runs 2&ndash;3 days. We'll give you a real timeline when we quote.</p>
+        </details>
+        <details>
+          <summary>Do you come to my marina, or do I bring the boat to you?</summary>
+          <p>Most work happens at one of our 4 shops, where we have proper lighting, climate control, and full equipment &mdash; the conditions ceramic and polish work actually need. On-site work at your home marina is possible for larger jobs. Ask when you book and we'll route to the closest TYC location.</p>
+        </details>
+        <details>
+          <summary>How long does ceramic coating last?</summary>
+          <p>3-year and 5-year products are available. Real-world life depends on storage, use, and maintenance &mdash; both options dramatically outlast wax (3&ndash;6 months) for repeat protection between reapplications.</p>
+        </details>
+        <details>
+          <summary>Which TYC location should I visit?</summary>
+          <p>Depends on where your boat lives. Lake Simcoe boats typically visit Krates (Keswick) or Grand Harbour (Brechin). Georgian Bay boats are handled at Driftwood Cove (Port Severn). Toronto-area boats at our Unwin Avenue shop. Pick a preferred location in the form &mdash; or select "No preference" and we'll route you to the closest fit.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark" style="padding:3rem 0;">
+    <div class="container" style="text-align:center;">
+      <h2 style="margin-bottom:0.5rem;">Ready to Get Started?</h2>
+      <p style="margin-bottom:1.5rem;font-size:1.1rem;">Get a free estimate or call us directly.</p>
+      <div class="hero-ctas" style="justify-content:center;">
+        <a href="#estimate" class="btn btn-primary btn-large">Get an Estimate</a>
+        <a href="tel:2893250457" class="btn btn-secondary btn-large">Call 289-325-0457</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <button class="lightbox-nav lightbox-prev" aria-label="Previous">&#8249;</button>
+    <img src="" alt="Full size photo" id="lightbox-img">
+    <button class="lightbox-nav lightbox-next" aria-label="Next">&#8250;</button>
+  </div>
+
+  <footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-col"><img src="/images/tyc-logo-white-footer.png" alt="Toronto Yacht Club" class="footer-logo" width="67" height="80"><h4>Toronto Yacht Club</h4><p>Professional marine detailing and repair serving the Greater Toronto Area since 2017.</p><div class="social-icons" style="margin-top:1rem;"><a href="https://www.facebook.com/share/1Hj6jngaML/?mibextid=wwXIfr" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a><a href="https://www.instagram.com/torontoyachtclub?igsh=enh2MmMycHd5amw4" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a></div></div><div class="footer-col"><h4>Quick Links</h4><ul class="footer-nav"><li><a href="/services">Services</a></li><li><a href="/history">About Us</a></li><li><a href="/ourwork">Our Work</a></li><li><a href="/inquiries">Contact / Inquiries</a></li><li><a href="/local-listings">Local Listings</a></li><li><a href="/sell-your-boat">Sell Your Yacht</a></li></ul></div><div class="footer-col"><h4>Contact</h4><address><a href="tel:2893250457">289-325-0457</a><br><a href="mailto:javier@torontoyachtclub.ca">javier@torontoyachtclub.ca</a><br><br>Mon–Fri: 9:00 AM – 6:00 PM</address></div><div class="footer-col"><h4>Locations</h4><address>Krates Marina — Keswick<br>Driftwood Cove — Port Severn<br>Grand Harbour — Brechin<br>Toronto — 475 Unwin Ave</address></div></div><div class="footer-bottom">&copy; 2026 Toronto Yacht Club. All rights reserved.</div></div></footer>
+  <script src="/js/main.js"></script>
+  <script>
+  // Lightbox (matches /ourwork pattern)
+  const items=document.querySelectorAll('.gallery-item'),lightbox=document.getElementById('lightbox'),lbImg=document.getElementById('lightbox-img');let idx=0;const srcs=[];
+  items.forEach((item,i)=>{const img=item.querySelector('img');if(img){srcs.push(img.src);item.addEventListener('click',()=>{idx=i;openLB()});}});
+  function openLB(){lbImg.src=srcs[idx];lightbox.classList.add('active');document.body.style.overflow='hidden';}
+  function closeLB(){lightbox.classList.remove('active');lbImg.src='';document.body.style.overflow='';}
+  document.querySelector('.lightbox-close').addEventListener('click',closeLB);
+  document.querySelector('.lightbox-prev').addEventListener('click',()=>{idx=(idx-1+srcs.length)%srcs.length;lbImg.src=srcs[idx];});
+  document.querySelector('.lightbox-next').addEventListener('click',()=>{idx=(idx+1)%srcs.length;lbImg.src=srcs[idx];});
+  lightbox.addEventListener('click',e=>{if(e.target===lightbox)closeLB();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLB();if(e.key==='ArrowLeft')document.querySelector('.lightbox-prev').click();if(e.key==='ArrowRight')document.querySelector('.lightbox-next').click();});
+  </script>
+  <script>
+  // Success banner on ?submitted=true
+  if(window.location.search.includes('submitted=true')){
+    var b=document.getElementById('submit-banner');
+    var f=document.getElementById('detailing-form-container');
+    if(b){b.classList.add('show');}
+    if(f){f.style.display='none';}
+    if(b){b.scrollIntoView({behavior:'smooth',block:'center'});}
+  }
+  </script>
+</body>
+</html>
