@@ -98,21 +98,6 @@
     .checkbox-group input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--gold); flex-shrink: 0; }
     @media (max-width: 600px) { .checkbox-group { grid-template-columns: 1fr; } }
     .file-upload-note { font-size: 0.85rem; color: var(--text-light); margin-top: 0.35rem; }
-    .cross-sell {
-      border: 1px solid var(--border); border-radius: var(--radius);
-      padding: 1rem 1.25rem; margin: 0 0 1.25rem;
-    }
-    .cross-sell legend {
-      padding: 0 0.35rem; font-weight: 600;
-      font-size: 0.88rem; color: var(--navy);
-    }
-    .cross-sell label {
-      display: flex; align-items: center; gap: 0.5rem;
-      margin-top: 0.35rem; font-size: 0.95rem; cursor: pointer;
-    }
-    .cross-sell input[type="checkbox"] {
-      width: 18px; height: 18px; accent-color: var(--gold); flex-shrink: 0;
-    }
 
     /* Related services */
     .related-services { background: #f7f9fb; padding: 4rem 0; }
@@ -122,8 +107,8 @@
       color: var(--text-light); line-height: 1.7;
     }
     .related-services-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 2rem; max-width: 900px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr;
+      max-width: 500px; margin: 0 auto;
     }
     .related-service {
       background: var(--white); padding: 2rem; border-radius: 8px;
@@ -133,7 +118,6 @@
     .related-service p { color: var(--text-light); line-height: 1.65; }
     .related-service p + p { margin-top: 1rem; }
     .related-service a { font-weight: 600; }
-    @media (max-width: 768px) { .related-services-grid { grid-template-columns: 1fr; } }
 
     /* Success banner */
     .submit-banner {
@@ -354,6 +338,7 @@
               <label><input type="checkbox" name="services" value="Seat re-upholstery"> Seat re-upholstery</label>
               <label><input type="checkbox" name="services" value="Interior cushions"> Interior cushions</label>
               <label><input type="checkbox" name="services" value="Other"> Other</label>
+              <label><input type="checkbox" name="services" value="SeaDek / marine flooring"> SeaDek / marine flooring</label>
             </div>
           </div>
 
@@ -365,11 +350,6 @@
 
           <div class="form-group"><label for="message">Details</label><textarea id="message" name="message" rows="5" placeholder="Colour preferences, condition of existing canvas, timing, anything else we should know…"></textarea></div>
 
-          <fieldset class="cross-sell">
-            <legend>Also interested in (optional):</legend>
-            <label><input type="checkbox" name="also_interested[]" value="SeaDek flooring"> SeaDek / marine flooring installation</label>
-          </fieldset>
-
           <div class="form-submit"><button type="submit" class="btn btn-primary btn-large">Request Estimate</button></div>
         </form>
       </div>
@@ -379,12 +359,8 @@
   <section class="related-services">
     <div class="container">
       <h2>Related Services</h2>
-      <p>Re-doing your canvas or upholstery is a natural moment to refresh the rest of the boat. Two services we're often asked about alongside canvas work:</p>
+      <p>After your canvas or upholstery work is done, a fresh detail makes the whole boat look new.</p>
       <div class="related-services-grid">
-        <div class="related-service">
-          <h3>SeaDek Marine Flooring</h3>
-          <p>Closed-cell foam decking that replaces hot, slippery fiberglass or worn carpet. Custom-cut to your boat, UV-stable, and comfortable underfoot. We install SeaDek as a standalone job or alongside canvas and upholstery work.</p>
-        </div>
         <div class="related-service">
           <h3>Boat Detailing</h3>
           <p>Wash, polish, wax, ceramic coatings, and interior cleaning. Pairs naturally with new canvas: clean hull, fresh enclosure, boat looks new.</p>
