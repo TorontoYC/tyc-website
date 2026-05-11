@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Marine Canvas &amp; Upholstery | Toronto Yacht Club</title>
-  <meta name="description" content="Marine canvas & upholstery built for boats: bimini tops, boat covers, enclosures, dodgers, and seat re-upholstery. 4 shops across the GTA, 100,000 sq/ft of workspace. Serving boat owners since 2017.">
+  <meta name="description" content="Marine canvas and upholstery built for boats: bimini tops, boat covers, enclosures, dodgers, and seat re-upholstery. Two canvas shops on Lake Simcoe (Keswick and Lagoon City) serving boat owners across Ontario.">
   <meta property="og:title" content="Marine Canvas & Upholstery | Toronto Yacht Club">
-  <meta property="og:description" content="Marine canvas & upholstery built for boats: bimini tops, boat covers, enclosures, dodgers, and seat re-upholstery. 4 shops across the GTA, 100,000 sq/ft of workspace. Serving boat owners since 2017.">
+  <meta property="og:description" content="Marine canvas and upholstery built for boats: bimini tops, boat covers, enclosures, dodgers, and seat re-upholstery. Two canvas shops on Lake Simcoe (Keswick and Lagoon City) serving boat owners across Ontario.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://torontoyachtclub.ca/services/canvas-upholstery">
   <meta property="og:image" content="https://torontoyachtclub.ca/images/canvas/tyc-canvas-hero.jpg">
@@ -130,10 +130,10 @@
     }
     .submit-banner.show { display: block; }
 
-    /* Locations grid (4 shops) */
+    /* Locations grid (2 shops) */
     .locations-grid-canvas {
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      gap: 1.25rem;
+      display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem; max-width: 760px; margin: 0 auto;
     }
     .location-card-canvas {
       background: var(--white); border: 1px solid var(--border);
@@ -154,7 +154,6 @@
       display: inline-block; margin-top: 0.85rem;
       font-size: 0.92rem; font-weight: 600;
     }
-    @media (max-width: 1100px) { .locations-grid-canvas { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 600px) { .locations-grid-canvas { grid-template-columns: 1fr; } }
 
     /* FAQ */
@@ -224,7 +223,7 @@
     </div>
     <div class="container">
       <h1>Marine Canvas &amp; Upholstery, Built for Boats</h1>
-      <p class="hero-sub">Bimini tops, boat covers, full enclosures, dodgers, and interior re-upholstery. 4 shops across the GTA, 100,000 sq/ft of workspace. Real marine work, not converted from furniture or auto upholstery. Serving boat owners since 2017.</p>
+      <p class="hero-sub">Bimini tops, boat covers, full enclosures, dodgers, and interior re-upholstery. Canvas work done at our Keswick and Lagoon City shops. Pickup available for Toronto boats. Real marine work, not converted from furniture or auto upholstery. Serving boat owners since 2017.</p>
       <div class="hero-ctas">
         <a href="#estimate" class="btn btn-primary btn-large">Get an Estimate</a>
         <a href="tel:2893250457" class="btn btn-secondary btn-large">Call 289-325-0457</a>
@@ -292,7 +291,7 @@
         <h2>Why Choose TYC for Canvas Work</h2>
       </div>
       <ul class="why-list">
-        <li>4 shops across the GTA: Keswick (Krates Marina), Port Severn (Driftwood Cove), Brechin (Grand Harbour), and Toronto (475 Unwin Ave)</li>
+        <li>Canvas work done in-house at Keswick (Krates Marina) and Lagoon City (Grand Harbour), with pickup available for Toronto boats</li>
         <li>100,000 sq/ft of total workspace, full vessel work in any season</li>
         <li>Marine-grade materials only, every project. Not auto or furniture supplies repurposed</li>
         <li>Insured full-time team, not weekend operators</li>
@@ -328,7 +327,7 @@
       <div class="section-header">
         <p class="section-label">Find Us</p>
         <h2>Our Locations</h2>
-        <p>Pick the shop closest to where your boat lives, or tell us in the form and we'll route you to the right team.</p>
+        <p>Drop your boat at the closer of our two canvas shops, or arrange pickup for Toronto boats.</p>
       </div>
       <div class="locations-grid-canvas">
         <div class="location-card-canvas">
@@ -341,15 +340,6 @@
           <a href="/canvas-upholstery-keswick" class="combo-link">Located near Keswick? See our Krates canvas shop &rarr;</a>
         </div>
         <div class="location-card-canvas">
-          <h3>Driftwood Cove Marine Resort</h3>
-          <p class="geo">Georgian Bay</p>
-          <address>
-            93 Port Severn Rd N<br>
-            Port Severn, ON L0K 1S0
-          </address>
-          <a href="/canvas-upholstery-georgian-bay" class="combo-link">Visit our Driftwood Cove canvas shop &rarr;</a>
-        </div>
-        <div class="location-card-canvas">
           <h3>Grand Harbour Marina</h3>
           <p class="geo">Lake Simcoe / Lagoon City</p>
           <address>
@@ -357,14 +347,6 @@
             Brechin, ON L0K 1B0
           </address>
           <a href="/canvas-upholstery-lagoon-city" class="combo-link">Visit our Grand Harbour canvas shop &rarr;</a>
-        </div>
-        <div class="location-card-canvas">
-          <h3>Toronto</h3>
-          <p class="geo">Toronto waterfront</p>
-          <address>
-            475 Unwin Avenue<br>
-            Toronto, ON M4M 3M2
-          </address>
         </div>
       </div>
     </div>
@@ -417,11 +399,10 @@
             <label for="preferred_location">Preferred Location *</label>
             <select id="preferred_location" name="preferred_location" required>
               <option value="">Select a location&hellip;</option>
-              <option value="Krates (Keswick)">Krates Marina (Keswick)</option>
-              <option value="Driftwood Cove (Port Severn)">Driftwood Cove (Port Severn)</option>
-              <option value="Grand Harbour (Brechin)">Grand Harbour (Brechin)</option>
-              <option value="Toronto (Unwin Ave)">Toronto (Unwin Avenue)</option>
-              <option value="No preference">No preference, route me to the closest</option>
+              <option value="Keswick (Krates Marina)">Keswick (Krates Marina)</option>
+              <option value="Lagoon City (Grand Harbour)">Lagoon City (Grand Harbour)</option>
+              <option value="Arrange pickup">Arrange pickup</option>
+              <option value="Not sure yet">Not sure yet</option>
             </select>
           </div>
 
@@ -496,7 +477,7 @@
         </details>
         <details>
           <summary>Which TYC location should I visit?</summary>
-          <p>Depends on where your boat lives. Lake Simcoe boat owners typically visit <a href="/canvas-upholstery-keswick">Krates (Keswick)</a>. Port Severn / Georgian Bay boats are handled at Driftwood Cove. Brechin / Lagoon City boats at Grand Harbour. Toronto-area boats at our Unwin Avenue shop. Pick a preferred location in the form, or select "No preference" and we'll route you to the closest fit.</p>
+          <p>Canvas work is done at the Keswick and Lagoon City shops. Boat owners in Port Severn, Honey Harbour, Midland, and the broader Georgian Bay area typically drop off at Keswick, the closer of our two canvas shops. Toronto customers can drop off at either shop or arrange pickup.</p>
         </details>
       </div>
     </div>
