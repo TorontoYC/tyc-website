@@ -126,7 +126,7 @@ module.exports = async function handler(req, res) {
   let result;
   try {
     result = await resend.emails.send({
-      from: 'forms@torontoyachtclub.ca',
+      from: 'forms@mail.torontoyachtclub.ca',
       to: 'javier@torontoyachtclub.ca',
       cc: ['nick@torontoyachtclub.ca'],
       ...(first(fields.email) && { replyTo: first(fields.email) }),
