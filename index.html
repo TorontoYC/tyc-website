@@ -25,6 +25,22 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is Toronto Yacht Club a membership yacht club?","acceptedAnswer":{"@type":"Answer","text":"No. We are a marine detailing and repair company. We service and maintain boats; we are not a social or membership club. We have worked with Ontario boat owners since 2017."}},{"@type":"Question","name":"Where is Toronto Yacht Club located?","acceptedAnswer":{"@type":"Answer","text":"We operate from three marina shops: Krates Marina in Keswick, Driftwood Cove in Port Severn, and Grand Harbour in Brechin. We also serve the Toronto and GTA area with mobile service and drop-off or pickup for shop work."}},{"@type":"Question","name":"What services do you offer?","acceptedAnswer":{"@type":"Answer","text":"We offer boat detailing, vinyl wrap, fiberglass and gel coat repair, canvas and upholstery, SeaDek flooring, bottom paint, winterization, and spring launch preparation."}},{"@type":"Question","name":"Do you work on boat engines?","acceptedAnswer":{"@type":"Answer","text":"No. We handle hull, gelcoat, fiberglass, canvas, upholstery, detailing, wraps, and winterization. Engine work and engine condition are handled by a marine mechanic or surveyor."}}]}
   </script>
+  <style>
+    /* FAQ */
+    .faq-list { max-width: 780px; margin: 0 auto; }
+    .faq-list details {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 0.75rem;
+    }
+    .faq-list summary {
+      cursor: pointer; font-weight: 600; font-size: 1.05rem;
+      color: var(--navy); list-style: none;
+    }
+    .faq-list summary::-webkit-details-marker { display: none; }
+    .faq-list summary::after { content: '+'; float: right; color: var(--gold); font-weight: 400; font-size: 1.4rem; line-height: 1; }
+    .faq-list details[open] summary::after { content: '\2013'; }
+    .faq-list details p { margin-top: 0.75rem; color: var(--text-light); line-height: 1.7; }
+  </style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-7YTZPD04CC"></script>
   <script>
@@ -152,24 +168,24 @@
         <p class="section-label">Common Questions</p>
         <h2>FAQ</h2>
       </div>
-      <dl class="faq-list">
-        <div class="faq-item">
-          <dt>Is Toronto Yacht Club a membership yacht club?</dt>
-          <dd>No. We are a marine detailing and repair company. We service and maintain boats; we are not a social or membership club. We have worked with Ontario boat owners since 2017.</dd>
-        </div>
-        <div class="faq-item">
-          <dt>Where is Toronto Yacht Club located?</dt>
-          <dd>We operate from three marina shops: Krates Marina in Keswick, Driftwood Cove in Port Severn, and Grand Harbour in Brechin. We also serve the Toronto and GTA area with mobile service and drop-off or pickup for shop work.</dd>
-        </div>
-        <div class="faq-item">
-          <dt>What services do you offer?</dt>
-          <dd>We offer boat detailing, vinyl wrap, fiberglass and gel coat repair, canvas and upholstery, SeaDek flooring, bottom paint, winterization, and spring launch preparation.</dd>
-        </div>
-        <div class="faq-item">
-          <dt>Do you work on boat engines?</dt>
-          <dd>No. We handle hull, gelcoat, fiberglass, canvas, upholstery, detailing, wraps, and winterization. Engine work and engine condition are handled by a marine mechanic or surveyor.</dd>
-        </div>
-      </dl>
+      <div class="faq-list">
+        <details>
+          <summary>Is Toronto Yacht Club a membership yacht club?</summary>
+          <p>No. We are a marine detailing and repair company. We service and maintain boats; we are not a social or membership club. We have worked with Ontario boat owners since 2017.</p>
+        </details>
+        <details>
+          <summary>Where is Toronto Yacht Club located?</summary>
+          <p>We operate from three marina shops: Krates Marina in Keswick, Driftwood Cove in Port Severn, and Grand Harbour in Brechin. We also serve the Toronto and GTA area with mobile service and drop-off or pickup for shop work.</p>
+        </details>
+        <details>
+          <summary>What services do you offer?</summary>
+          <p>We offer boat detailing, vinyl wrap, fiberglass and gel coat repair, canvas and upholstery, SeaDek flooring, bottom paint, winterization, and spring launch preparation.</p>
+        </details>
+        <details>
+          <summary>Do you work on boat engines?</summary>
+          <p>No. We handle hull, gelcoat, fiberglass, canvas, upholstery, detailing, wraps, and winterization. Engine work and engine condition are handled by a marine mechanic or surveyor.</p>
+        </details>
+      </div>
     </div>
   </section>
 
