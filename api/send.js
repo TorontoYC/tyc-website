@@ -129,6 +129,7 @@ module.exports = async function handler(req, res) {
       from: 'forms@torontoyachtclub.ca',
       to: 'javier@torontoyachtclub.ca',
       cc: ['nick@torontoyachtclub.ca'],
+      ...(first(fields.email) && { replyTo: first(fields.email) }),
       subject: 'New inquiry from torontoyachtclub.ca',
       html: buildHtml(fields),
       ...(attachments.length > 0 && { attachments }),
