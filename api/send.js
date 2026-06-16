@@ -14,8 +14,12 @@ const ALLOWED_TYPES = new Set([
   'application/pdf',
 ]);
 
-// Resend's hard limit is 40 MB; we cap at 25 MB to leave headroom for encoding overhead.
-const MAX_TOTAL_BYTES = 25 * 1024 * 1024;
+// Cap at 15 MB raw. Javier's inbox is Gmail (Google Workspace), which rejects incoming
+// messages larger than ~25 MB on the wire. Base64 encoding inflates attachments ~33%,
+// so a 25 MB raw upload becomes ~33 MB in transit and bounces silently. 15 MB raw
+// encodes to ~20 MB on the wire, keeping well inside Gmail's receive limit.
+// Do not raise this without accounting for the Base64 overhead.
+const MAX_TOTAL_BYTES = 15 * 1024 * 1024;
 
 function esc(str) {
   return String(str ?? '')
@@ -82,7 +86,7 @@ module.exports = async function handler(req, res) {
     if (err.httpCode === 413) {
       return res.status(413).json({
         error:
-          'Your photos are too large to send. Please reduce the file sizes or attach fewer photos (25 MB total limit) and try again.',
+          'Your photos are too large to send. Please reduce the file sizes or attach fewer photos (15 MB total limit) and try again.',
       });
     }
     console.error('Multipart parse error:', err.message);
