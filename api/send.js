@@ -21,6 +21,9 @@ const ALLOWED_TYPES = new Set([
 // Do not raise this without accounting for the Base64 overhead.
 const MAX_TOTAL_BYTES = 15 * 1024 * 1024;
 
+// Fields excluded from the email body (internal / honeypot).
+const SKIP = new Set(['_honey', '_form_name']);
+
 function esc(str) {
   return String(str ?? '')
     .replace(/&/g, '&amp;')
@@ -35,21 +38,20 @@ function first(v) {
   return v ?? '';
 }
 
-function buildHtml(fields) {
-  const servicesRaw = fields.services;
-  const services = Array.isArray(servicesRaw)
-    ? servicesRaw.join(', ')
-    : (servicesRaw ?? '');
+function formatLabel(name) {
+  if (name === 'boat_loa') return 'Boat LOA';
+  return name.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+}
 
-  const rows = [
-    ['Name',      first(fields.name)],
-    ['Phone',     first(fields.phone)],
-    ['Email',     first(fields.email)],
-    ['Boat Info', first(fields.boat_info)],
-    ['Services',  services],
-    ['Location',  first(fields.location)],
-    ['Message',   first(fields.message)],
-  ]
+function buildHtml(fields) {
+  const formName = first(fields._form_name) || 'form submission';
+
+  const rows = Object.entries(fields)
+    .filter(([key]) => !SKIP.has(key) && !key.startsWith('_'))
+    .map(([key, val]) => {
+      const value = Array.isArray(val) ? val.join(', ') : first(val);
+      return [formatLabel(key), value];
+    })
     .filter(([, v]) => v)
     .map(([label, value]) =>
       `<tr>
@@ -61,7 +63,7 @@ function buildHtml(fields) {
 
   return `<div style="font-family:sans-serif;font-size:15px;line-height:1.6;color:#222;">
   <p style="margin:0 0 16px;font-size:12px;color:#999;border-bottom:1px solid #eee;padding-bottom:10px;">
-    Submitted via torontoyachtclub.ca/inquiries
+    ${esc(formName)} - torontoyachtclub.ca
   </p>
   <table style="border-collapse:collapse;width:100%;">${rows}</table>
 </div>`;
@@ -121,6 +123,7 @@ module.exports = async function handler(req, res) {
     }
   }
 
+  const formName = first(fields._form_name) || 'form submission';
   const resend = new Resend(process.env.RESEND_API_KEY);
 
   let result;
@@ -130,7 +133,7 @@ module.exports = async function handler(req, res) {
       to: 'javier@torontoyachtclub.ca',
       cc: ['nick@torontoyachtclub.ca'],
       ...(first(fields.email) && { replyTo: first(fields.email) }),
-      subject: 'New inquiry from torontoyachtclub.ca',
+      subject: `New ${formName} from torontoyachtclub.ca`,
       html: buildHtml(fields),
       ...(attachments.length > 0 && { attachments }),
     });

@@ -382,12 +382,8 @@
       </div>
 
       <div class="form-container" id="canvas-form-container">
-        <form id="canvas-form" action="https://formsubmit.co/javier@torontoyachtclub.ca" method="POST" enctype="multipart/form-data">
-          <input type="hidden" name="_cc" value="nick@torontoyachtclub.ca">
-          <input type="hidden" name="_subject" value="Canvas/Upholstery Estimate — /services/canvas-upholstery">
-          <input type="hidden" name="_next" value="https://torontoyachtclub.ca/services/canvas-upholstery?submitted=true">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
+        <form id="canvas-form" action="/api/send" method="POST" enctype="multipart/form-data">
+          <input type="hidden" name="_form_name" value="Canvas and Upholstery Estimate">
           <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
           <div class="form-row">
@@ -441,7 +437,7 @@
           <div class="form-group">
             <label for="photos">Photos <span style="font-weight:400;color:var(--text-light);">(optional)</span></label>
             <input type="file" id="photos" name="attachment" accept="image/*" multiple>
-            <p class="file-upload-note">Photos of the existing canvas/upholstery help us quote more accurately. Max 5 MB per file.</p>
+            <p class="file-upload-note">Photos of the existing canvas/upholstery help us quote more accurately. 15 MB total limit across all files.</p>
           </div>
 
           <div class="form-group"><label for="message">Details</label><textarea id="message" name="message" rows="5" placeholder="Colour preferences, condition of existing canvas, timing, anything else we should know&hellip;"></textarea></div>
@@ -538,14 +534,55 @@
   document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLB();if(e.key==='ArrowLeft')document.querySelector('.lightbox-prev').click();if(e.key==='ArrowRight')document.querySelector('.lightbox-next').click();});
   </script>
   <script>
-  // Success banner on ?submitted=true
-  if(window.location.search.includes('submitted=true')){
-    var b=document.getElementById('submit-banner');
-    var f=document.getElementById('canvas-form-container');
-    if(b){b.classList.add('show');}
-    if(f){f.style.display='none';}
-    if(b){b.scrollIntoView({behavior:'smooth',block:'center'});}
-  }
+  (function () {
+    var form = document.getElementById('canvas-form');
+    var btn  = form.querySelector('[type="submit"]');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      clearError();
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+
+      var res, data;
+      try {
+        res  = await fetch('/api/send', { method: 'POST', body: new FormData(form) });
+        data = await res.json();
+      } catch (_) {
+        btn.disabled = false;
+        btn.textContent = 'Request Estimate';
+        showError('Something went wrong. Please try again or call us at 289-325-0457.');
+        return;
+      }
+
+      if (res.ok) {
+        var container = document.getElementById('canvas-form-container');
+        if (container) container.style.display = 'none';
+        var banner = document.getElementById('submit-banner');
+        if (banner) { banner.classList.add('show'); banner.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Request Estimate';
+        showError((data && data.error) || 'Something went wrong. Please try again or call us at 289-325-0457.');
+      }
+    });
+
+    function showError(msg) {
+      var el = document.getElementById('form-error');
+      if (!el) {
+        el = document.createElement('p');
+        el.id = 'form-error';
+        el.style.cssText = 'color:#c0392b;margin-top:0.75rem;font-size:0.95rem;';
+        form.querySelector('.form-submit').appendChild(el);
+      }
+      el.textContent = msg;
+    }
+
+    function clearError() {
+      var el = document.getElementById('form-error');
+      if (el) el.textContent = '';
+    }
+  }());
   </script>
 </body>
 </html>
