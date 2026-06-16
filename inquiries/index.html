@@ -65,7 +65,7 @@
   <section class="section" id="estimate">
     <div class="container">
       <div class="form-container" id="inquiry-form-container">
-        <div class="form-header"><h2>Get a Free Estimate</h2><p>Tell us about your vessel and what you need — no obligation.</p></div>
+        <div class="form-header" id="inquiry-form-header"><h2>Get a Free Estimate</h2><p>Tell us about your vessel and what you need, no obligation.</p></div>
 
         <form id="inquiry-form" action="/api/send" method="POST" enctype="multipart/form-data">
           <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
@@ -153,6 +153,8 @@
 
       if (res.ok) {
         form.style.display = 'none';
+        var hdr = document.getElementById('inquiry-form-header');
+        if (hdr) hdr.style.display = 'none';
         document.getElementById('form-success').classList.add('show');
         var section = document.getElementById('estimate');
         if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
