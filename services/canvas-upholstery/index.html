@@ -371,7 +371,7 @@
 
   <section class="section section-alt" id="estimate">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header" id="estimate-header">
         <p class="section-label">Free Quote</p>
         <h2>Get an Estimate</h2>
         <p>Tell us about your boat and what you need. Javier or Nick will follow up within 24 hours.</p>
@@ -556,6 +556,8 @@
       }
 
       if (res.ok) {
+        var hdr = document.getElementById('estimate-header');
+        if (hdr) hdr.style.display = 'none';
         var container = document.getElementById('canvas-form-container');
         if (container) container.style.display = 'none';
         var banner = document.getElementById('submit-banner');

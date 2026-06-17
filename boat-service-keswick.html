@@ -452,17 +452,17 @@
 
   <section class="section section-alt">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header" id="estimate-header">
         <p class="section-label">Free Quote</p>
         <h2>Get a Free Estimate</h2>
-        <p>Tell us about your boat and what you need — we'll respond within 2 hours during business hours.</p>
+        <p>Tell us about your boat and what you need. We'll respond within 2 hours during business hours.</p>
       </div>
 
       <div class="form-thanks" id="form-thanks" style="display:none;">
         <strong>Thanks!</strong> We'll be in touch within 2 hours during business hours. For urgent inquiries, call <a href="tel:2893250457">289-325-0457</a>.
       </div>
 
-      <div class="form-container">
+      <div class="form-container" id="estimate-form-container">
         <form id="estimate-form" action="/api/send" method="POST" enctype="multipart/form-data">
           <input type="hidden" name="_form_name" value="Keswick Estimate">
           <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
@@ -588,7 +588,10 @@
       }
 
       if (res.ok) {
-        form.style.display = 'none';
+        var hdr = document.getElementById('estimate-header');
+        if (hdr) hdr.style.display = 'none';
+        var fc = document.getElementById('estimate-form-container');
+        if (fc) fc.style.display = 'none';
         var thanks = document.getElementById('form-thanks');
         if (thanks) { thanks.style.display = 'block'; thanks.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
       } else {

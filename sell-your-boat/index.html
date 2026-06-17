@@ -59,7 +59,7 @@
   <section class="hero" style="padding:3rem 0 2.5rem;"><div class="container"><div class="hero-content"><p class="section-label">Sell with Us</p><h1>Sell Your Yacht</h1><p>Looking to sell? Fill out the form below and we'll help connect you with buyers in the GTA.</p></div></div></section>
 
   <section class="section"><div class="container"><div class="form-container">
-    <div class="form-header"><h2>List Your Boat</h2><p>Tell us about your vessel and we'll be in touch.</p></div>
+    <div class="form-header" id="sell-form-header"><h2>List Your Boat</h2><p>Tell us about your vessel and we'll be in touch.</p></div>
     <form id="sell-form" action="/api/send" method="POST" enctype="multipart/form-data">
       <input type="hidden" name="_form_name" value="Boat Listing">
       <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
@@ -116,6 +116,7 @@
       }
 
       if (res.ok) {
+        document.getElementById('sell-form-header').style.display = 'none';
         form.style.display = 'none';
         document.getElementById('sell-success').classList.add('show');
       } else {
