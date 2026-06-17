@@ -68,6 +68,7 @@
         <div class="form-header" id="inquiry-form-header"><h2>Get a Free Estimate</h2><p>Tell us about your vessel and what you need, no obligation.</p></div>
 
         <form id="inquiry-form" action="/api/send" method="POST" enctype="multipart/form-data">
+          <input type="hidden" name="_form_name" value="Inquiry">
           <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
           <div class="form-row">
@@ -101,7 +102,7 @@
           <div class="form-group">
             <label for="photos">Photos <span style="font-weight:400; color:var(--text-light, #777);">(optional)</span></label>
             <input type="file" id="photos" name="attachment" accept="image/*" multiple>
-            <p class="file-upload-note">Upload photos of your vessel or the area that needs work. Max 5 MB per file.</p>
+            <p class="file-upload-note">Upload photos of your vessel or the area that needs work. 15 MB total limit across all files.</p>
           </div>
 
           <div class="form-submit"><button type="submit" class="btn btn-primary btn-large">Send Inquiry</button></div>
