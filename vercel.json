@@ -1,6 +1,10 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/sell-your-boat", "destination": "/brokerage/sell", "permanent": true },
+    { "source": "/local-listings", "destination": "/brokerage", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",
