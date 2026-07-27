@@ -24,6 +24,30 @@ const MAX_TOTAL_BYTES = 15 * 1024 * 1024;
 // Fields excluded from the email body (internal / honeypot).
 const SKIP = new Set(['_honey', '_form_name']);
 
+const BLOCKED_EMAILS = [
+  'veronicabecca1206@gmail.com',
+  'henry.baker19889@gmail.com',
+];
+
+const AGENCY_PITCH_PATTERNS = [
+  ['seo', /\bseo\b/i],
+  ['search engine optimi', /\bsearch engine optimi(?:(?:z|s)(?:ation|e|ing|ed))?\b/i],
+  ['keyword rank', /\bkeyword rank\b/i],
+  ['keyword ranking', /\bkeyword ranking\b/i],
+  ['backlink', /\bbacklink\b/i],
+  ['link building', /\blink building\b/i],
+  ['organic growth', /\borganic growth\b/i],
+  ['organic traffic', /\borganic traffic\b/i],
+  ['digital marketing', /\bdigital marketing\b/i],
+  ['web design', /\bweb design\b/i],
+  ['website redesign', /\bwebsite redesign\b/i],
+  ['first page of google', /\bfirst page of google\b/i],
+  ['guest post', /\bguest post\b/i],
+  ['increase your sales', /\bincrease your sales\b/i],
+  ['brief plan with pricing', /\bbrief plan with pricing\b/i],
+  ['pricing proposal', /\bpricing proposal\b/i],
+];
+
 function esc(str) {
   return String(str ?? '')
     .replace(/&/g, '&amp;')
@@ -41,6 +65,42 @@ function first(v) {
 function formatLabel(name) {
   if (name === 'boat_loa') return 'Boat LOA';
   return name.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+}
+
+function isLikelySpam(fields) {
+  const reasons = [];
+  let flagged = false;
+
+  const services = Array.isArray(fields.services)
+    ? fields.services
+    : (first(fields.services) ? [first(fields.services)] : []);
+  const serviceCount = services.filter((value) => String(value).trim()).length;
+  if (serviceCount >= 8) {
+    flagged = true;
+    reasons.push(`Selected ${serviceCount} services (threshold: 8)`);
+  }
+
+  const message = String(first(fields.message));
+  const matchedTerms = AGENCY_PITCH_PATTERNS
+    .filter(([, pattern]) => pattern.test(message))
+    .map(([term]) => term);
+  if (matchedTerms.length > 0) {
+    flagged = true;
+    reasons.push(`Agency pitch language: ${matchedTerms.join(', ')}`);
+  }
+
+  const phoneDigits = String(first(fields.phone)).replace(/\D/g, '');
+  if (phoneDigits.length !== 10 && phoneDigits.length !== 11) {
+    reasons.push(`Implausible phone: ${phoneDigits.length} digits`);
+  }
+
+  const email = String(first(fields.email)).trim().toLowerCase();
+  if (BLOCKED_EMAILS.includes(email)) {
+    flagged = true;
+    reasons.push(`Blocked email: ${email}`);
+  }
+
+  return { flagged, reasons };
 }
 
 function buildHtml(fields) {
@@ -66,6 +126,14 @@ function buildHtml(fields) {
     ${esc(formName)} - torontoyachtclub.ca
   </p>
   <table style="border-collapse:collapse;width:100%;">${rows}</table>
+</div>`;
+}
+
+function buildFlagReasonsHtml(reasons) {
+  const items = reasons.map((reason) => `<li>${esc(reason)}</li>`).join('');
+  return `<div style="font-family:sans-serif;font-size:13px;line-height:1.5;color:#777;border-top:1px solid #eee;margin-top:18px;padding-top:12px;">
+  <strong>Flag reasons</strong>
+  <ul style="margin:6px 0 0;padding-left:20px;">${items}</ul>
 </div>`;
 }
 
@@ -124,17 +192,26 @@ module.exports = async function handler(req, res) {
   }
 
   const formName = first(fields._form_name) || 'form submission';
+  const spamCheck = isLikelySpam(fields);
   const resend = new Resend(process.env.RESEND_API_KEY);
+
+  if (spamCheck.flagged) {
+    console.error('Flagged form submission:', spamCheck.reasons);
+  }
 
   let result;
   try {
     result = await resend.emails.send({
       from: 'forms@mail.torontoyachtclub.ca',
-      to: 'javier@torontoyachtclub.ca',
-      cc: ['nick@torontoyachtclub.ca'],
+      to: spamCheck.flagged
+        ? 'nick@torontoyachtclub.ca'
+        : 'javier@torontoyachtclub.ca',
+      ...(!spamCheck.flagged && { cc: ['nick@torontoyachtclub.ca'] }),
       ...(first(fields.email) && { replyTo: first(fields.email) }),
-      subject: `New ${formName} from torontoyachtclub.ca`,
-      html: buildHtml(fields),
+      subject: `${spamCheck.flagged ? '[FLAGGED] ' : ''}New ${formName} from torontoyachtclub.ca`,
+      html: spamCheck.flagged
+        ? `${buildHtml(fields)}${buildFlagReasonsHtml(spamCheck.reasons)}`
+        : buildHtml(fields),
       ...(attachments.length > 0 && { attachments }),
     });
   } catch (err) {
