@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boat Shrink Wrapping | Lake Simcoe, Georgian Bay, Toronto | Toronto Yacht Club</title>
+  <meta name="description" content="Framed and vented boat shrink wrapping at Keswick, Port Severn and Brechin, plus mobile service across Lake Simcoe, Georgian Bay and the GTA. Priced by the foot. Limited bookings each season.">
+  <meta property="og:title" content="Boat Shrink Wrapping | Lake Simcoe, Georgian Bay, Toronto | Toronto Yacht Club">
+  <meta property="og:description" content="Framed and vented boat shrink wrapping at Keswick, Port Severn and Brechin, plus mobile service across Lake Simcoe, Georgian Bay and the GTA. Priced by the foot. Limited bookings each season.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://torontoyachtclub.ca/services/shrink-wrap">
+  <meta property="og:image" content="https://torontoyachtclub.ca/images/shrink-wrap/tyc-shrink-wrap-hero.jpg">
+  <link rel="canonical" href="https://torontoyachtclub.ca/services/shrink-wrap">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;500;600;700&display=swap"></noscript>
+  <link rel="preload" as="image" href="/images/shrink-wrap/tyc-shrink-wrap-hero.webp" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/images/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/images/favicon.png">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Service","name":"Boat Shrink Wrapping","serviceType":"Boat Shrink Wrapping","description":"Framed and vented boat shrink wrapping at Keswick, Port Severn and Brechin, plus mobile service across Lake Simcoe, Georgian Bay and the GTA. Priced by the foot. Limited bookings each season.","url":"https://torontoyachtclub.ca/services/shrink-wrap","image":"https://torontoyachtclub.ca/images/shrink-wrap/tyc-shrink-wrap-hero.jpg","areaServed":["Lake Simcoe","Georgian Bay","Greater Toronto Area"],"provider":{"@type":"Organization","name":"Toronto Yacht Club","url":"https://torontoyachtclub.ca","telephone":"+1-289-325-0457","email":"javier@torontoyachtclub.ca","foundingDate":"2017","logo":"https://torontoyachtclub.ca/images/tyc-logo-white-footer.png","location":[{"@type":"Place","name":"Krates Marina (Keswick)","address":{"@type":"PostalAddress","streetAddress":"290 The Queensway S","addressLocality":"Keswick","addressRegion":"ON","postalCode":"L4P 2B3","addressCountry":"CA"}},{"@type":"Place","name":"Grand Harbour Marina (Brechin)","address":{"@type":"PostalAddress","streetAddress":"150 Laguna Pkwy","addressLocality":"Brechin","addressRegion":"ON","postalCode":"L0K 1B0","addressCountry":"CA"}}]}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does it cost?","acceptedAnswer":{"@type":"Answer","text":"We quote by the foot. Length is the main factor, then boat type and any add ons like a zipper door or extra vents. Send us the details and we will price it."}},{"@type":"Question","name":"When should I book?","acceptedAnswer":{"@type":"Answer","text":"Early. Spots fill, and marina haul out schedules back up through November. The sooner we know when your boat is coming out, the better we can slot you in."}},{"@type":"Question","name":"Do I need to be there when you wrap it?","acceptedAnswer":{"@type":"Answer","text":"No. Tell us where the boat is and how it is sitting, and we handle it."}},{"@type":"Question","name":"Can I get into the boat over the winter?","acceptedAnswer":{"@type":"Answer","text":"Yes, if you ask for a zipper access door when you book. Retrofitting one later is harder than putting it in the first time."}}]}
+  </script>
+  <style>
+    /* Page-specific: shrink wrap hero and layout */
+    .shrink-wrap-hero {
+      position: relative; min-height: 62vh;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; color: var(--white); overflow: hidden; padding: 4rem 0;
+    }
+    .shrink-wrap-hero .hero-bg { position: absolute; inset: 0; }
+    .shrink-wrap-hero .hero-bg picture { display: block; width: 100%; height: 100%; }
+    .shrink-wrap-hero .hero-bg-img { width: 100%; height: 100%; object-fit: cover; }
+    .shrink-wrap-hero .hero-bg::after {
+      content: ''; position: absolute; inset: 0;
+      background: rgba(11, 29, 51, 0.58); z-index: 1;
+    }
+    .shrink-wrap-hero .container { position: relative; z-index: 2; max-width: 860px; }
+    .shrink-wrap-hero h1 {
+      color: var(--white); font-size: clamp(2rem, 5vw, 3.2rem);
+      margin-bottom: 1rem; text-shadow: 0 2px 12px rgba(0,0,0,0.35);
+    }
+    .shrink-wrap-hero .hero-sub {
+      font-size: clamp(1rem, 1.8vw, 1.15rem);
+      color: rgba(255,255,255,0.92); margin-bottom: 1.75rem; line-height: 1.7;
+    }
+    .shrink-wrap-hero .hero-ctas { display: flex; gap: 0.85rem; flex-wrap: wrap; justify-content: center; }
+
+    .prose { max-width: 780px; margin: 0 auto; font-size: 1.05rem; line-height: 1.8; }
+    .prose p + p { margin-top: 1.1rem; }
+    .feature-list { max-width: 820px; margin: 1.25rem auto 0; list-style: none; padding: 0; }
+    .feature-list li {
+      padding: 0.85rem 0 0.85rem 1.75rem; position: relative;
+      border-bottom: 1px solid var(--border); font-size: 1rem; line-height: 1.6;
+    }
+    .feature-list li:last-child { border-bottom: none; }
+    .feature-list li::before {
+      content: ''; position: absolute; left: 0; top: 1.4rem;
+      width: 8px; height: 8px; background: var(--gold); border-radius: 50%;
+    }
+
+    .gallery-item picture { display: block; width: 100%; height: 100%; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+
+    .checkbox-group { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1.5rem; margin-top: 0.5rem; }
+    .checkbox-group label { display: flex; align-items: center; gap: 0.5rem; font-weight: 400; cursor: pointer; font-size: 0.95rem; }
+    .checkbox-group input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--gold); flex-shrink: 0; }
+    @media (max-width: 600px) { .checkbox-group { grid-template-columns: 1fr; } }
+    .file-upload-note { font-size: 0.85rem; color: var(--text-light); margin-top: 0.35rem; }
+
+    .related-services { background: #f7f9fb; padding: 4rem 0; }
+    .related-services h2 { text-align: center; margin-bottom: 1rem; }
+    .related-services > .container > p {
+      text-align: center; max-width: 700px; margin: 0 auto 3rem;
+      color: var(--text-light); line-height: 1.7;
+    }
+    .related-services-grid {
+      display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem; max-width: 900px; margin: 0 auto;
+    }
+    .related-service {
+      background: var(--white); padding: 2rem; border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .related-service h3 { margin-top: 0; margin-bottom: 1rem; }
+    .related-service p { color: var(--text-light); line-height: 1.65; }
+    .related-service p + p { margin-top: 1rem; }
+    .related-service a { font-weight: 600; }
+    @media (max-width: 700px) { .related-services-grid { grid-template-columns: 1fr; } }
+
+    .submit-banner {
+      display: none; max-width: 680px; margin: 0 auto 1.5rem;
+      background: #E6F4EA; border: 1px solid #86C19C;
+      color: #1F5632; padding: 1rem 1.25rem;
+      border-radius: var(--radius); text-align: center; font-size: 1rem;
+    }
+    .submit-banner.show { display: block; }
+
+    .faq-list { max-width: 780px; margin: 0 auto; }
+    .faq-list details {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 0.75rem;
+    }
+    .faq-list summary {
+      cursor: pointer; font-weight: 600; font-size: 1.05rem;
+      color: var(--navy); list-style: none;
+    }
+    .faq-list summary::-webkit-details-marker { display: none; }
+    .faq-list summary::after { content: '+'; float: right; color: var(--gold); font-weight: 400; font-size: 1.4rem; line-height: 1; }
+    .faq-list details[open] summary::after { content: '\2013'; }
+    .faq-list details p { margin-top: 0.75rem; color: var(--text-light); line-height: 1.7; }
+  </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7YTZPD04CC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7YTZPD04CC');
+  </script>
+  <!-- MailerLite Universal -->
+  <script>
+      (function() {
+        var mailerLiteLoaded = false;
+
+        function loadML() {
+          if (mailerLiteLoaded) return;
+          mailerLiteLoaded = true;
+
+          (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+          .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+          n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+          (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+          ml('account', '2320213');
+        }
+
+        ['scroll', 'touchstart', 'mousemove', 'keydown'].forEach(function(eventName) {
+          window.addEventListener(eventName, loadML, { once: true, passive: true });
+        });
+
+        window.addEventListener('load', function() {
+          setTimeout(loadML, 4000);
+        });
+      })();
+  </script>
+  <!-- End MailerLite Universal -->
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-top">
+      <a href="/" class="logo"><img src="/images/tyc-logo-white.svg" alt="Toronto Yacht Club" class="logo-img" width="74" height="88"></a>
+      <div class="header-ctas">
+        <a href="#estimate" class="btn btn-secondary">Get Estimate</a>
+        <a href="/book" class="btn btn-primary">Book Now</a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+    </div>
+    <nav class="main-nav" id="main-nav">
+      <div class="container">
+        <ul class="nav-list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/services" class="active">Services</a></li>
+          <li><a href="/history">About Us</a></li>
+          <li><a href="/ourwork">Our Work</a></li>
+          <li><a href="/inquiries">Contact</a></li>
+          
+          <li><a href="/brokerage">Brokerage</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/careers">Careers</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <section class="shrink-wrap-hero">
+    <div class="hero-bg" role="presentation">
+      <picture>
+        <source srcset="/images/shrink-wrap/tyc-shrink-wrap-hero.webp" type="image/webp">
+        <img src="/images/shrink-wrap/tyc-shrink-wrap-hero.jpg" alt="" class="hero-bg-img" width="1200" height="675" loading="eager" fetchpriority="high">
+      </picture>
+    </div>
+    <div class="container">
+      <h1>Boat Shrink Wrapping</h1>
+      <p class="hero-sub">Shrink wrap is the difference between a boat that comes out of winter dry and one that comes out with mould in the cushions. We build a frame, wrap the boat tight, vent it so it breathes, and finish it so the cover is still on in March.</p>
+      <div class="hero-ctas">
+        <a href="#estimate" class="btn btn-primary btn-large">Request a Quote</a>
+        <a href="tel:2893250457" class="btn btn-secondary btn-large">Call 289-325-0457</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>What you get</h2>
+      </div>
+      <ul class="feature-list">
+        <li>A built frame, not film stretched over the rails. The frame is what keeps water from pooling and tearing the cover open in February.</li>
+        <li>Vents, so the boat breathes. Trapped moisture is what causes mould and mildew.</li>
+        <li>Heat sealed seams and tight tie downs.</li>
+        <li>A zipper access door on request, if you want to get aboard over the winter.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Where we wrap</h2>
+      </div>
+      <div class="prose">
+        <p>We wrap at all three of our shops: Krates Marina in Keswick, Driftwood Cove in Port Severn, and Grand Harbour in Brechin. We also come to you across Lake Simcoe, Georgian Bay and the GTA. On a trailer, on a cradle, or on stands.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Booking</h2>
+      </div>
+      <div class="prose">
+        <p>We take a limited number of shrink wrap bookings each season, so every boat gets wrapped before the weather turns. Last season we were still wrapping in January. We would rather book fewer boats and finish on time.</p>
+        <p>Quotes are by the foot. Tell us the length of the boat and when it comes out of the water, and we will send you a price. A 50% deposit holds your spot.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Recent Work</p>
+        <h2>Photo Gallery</h2>
+      </div>
+      <div class="gallery-grid" id="gallery">
+        <div class="gallery-item"><picture><source srcset="/images/shrink-wrap/tyc-shrink-wrap-02.webp" type="image/webp"><img src="/images/shrink-wrap/tyc-shrink-wrap-02.jpg" alt="Toronto Yacht Club crew shrink wrapping a boat on a trailer" width="1200" height="1600" loading="lazy"></picture></div>
+        <div class="gallery-item"><picture><source srcset="/images/shrink-wrap/tyc-shrink-wrap-03.webp" type="image/webp"><img src="/images/shrink-wrap/tyc-shrink-wrap-03.jpg" alt="Motor yacht hauled out and prepped for shrink wrapping" width="1200" height="1600" loading="lazy"></picture></div>
+        <div class="gallery-item"><picture><source srcset="/images/shrink-wrap/tyc-shrink-wrap-10.webp" type="image/webp"><img src="/images/shrink-wrap/tyc-shrink-wrap-10.jpg" alt="Shrink wrapped cruiser finished at night in the marina yard" width="1200" height="1600" loading="lazy"></picture></div>
+        <div class="gallery-item"><picture><source srcset="/images/shrink-wrap/tyc-shrink-wrap-12.webp" type="image/webp"><img src="/images/shrink-wrap/tyc-shrink-wrap-12.jpg" alt="Heat gun sealing shrink wrap film on a boat after dark" width="1200" height="1600" loading="lazy"></picture></div>
+        <div class="gallery-item"><picture><source srcset="/images/shrink-wrap/tyc-shrink-wrap-05.webp" type="image/webp"><img src="/images/shrink-wrap/tyc-shrink-wrap-05.jpg" alt="Shrink wrap film pulled over a hull before heat sealing" width="1200" height="1600" loading="lazy"></picture></div>
+        <div class="gallery-item"><picture><source srcset="/images/shrink-wrap/tyc-shrink-wrap-06.webp" type="image/webp"><img src="/images/shrink-wrap/tyc-shrink-wrap-06.jpg" alt="Sailboat covered and framed for winter storage" width="1200" height="1600" loading="lazy"></picture></div>
+        <div class="gallery-item"><picture><source srcset="/images/shrink-wrap/tyc-shrink-wrap-11.webp" type="image/webp"><img src="/images/shrink-wrap/tyc-shrink-wrap-11.jpg" alt="Toronto Yacht Club crew running strapping across a boat before wrapping" width="1200" height="1600" loading="lazy"></picture></div>
+        <div class="gallery-item"><picture><source srcset="/images/shrink-wrap/tyc-shrink-wrap-08.webp" type="image/webp"><img src="/images/shrink-wrap/tyc-shrink-wrap-08.jpg" alt="Boats lined up in the yard waiting to be shrink wrapped" width="1200" height="1600" loading="lazy"></picture></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="estimate">
+    <div class="container">
+      <div class="section-header" id="shrink-wrap-form-header">
+        <p class="section-label">Request a Quote</p>
+        <h2>Book Shrink Wrap</h2>
+        <p>Tell us the length of the boat and when it comes out of the water, and we will send you a price.</p>
+      </div>
+
+      <div class="submit-banner" id="submit-banner" role="status" aria-live="polite">
+        Thanks, your shrink wrap request has been received. We will be in touch shortly.
+      </div>
+
+      <div class="form-container" id="shrink-wrap-form-container">
+        <form id="shrink-wrap-form" action="/api/send" method="POST" enctype="multipart/form-data">
+          <input type="hidden" name="_form_name" value="Shrink Wrap Booking">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+          <div class="form-row">
+            <div class="form-group"><label for="name">Name *</label><input type="text" id="name" name="name" required autocomplete="name"></div>
+            <div class="form-group"><label for="email">Email *</label><input type="email" id="email" name="email" required autocomplete="email"></div>
+          </div>
+          <div class="form-group"><label for="phone">Phone *</label><input type="tel" id="phone" name="phone" required autocomplete="tel"></div>
+
+          <div class="form-row">
+            <div class="form-group"><label for="boat_make_model">Boat make and model</label><input type="text" id="boat_make_model" name="boat_make_model" required></div>
+            <div class="form-group"><label for="boat_loa">Length overall (feet)</label><input type="number" id="boat_loa" name="boat_loa" required min="1" step="0.1"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="boat_type">Boat type</label>
+            <select id="boat_type" name="boat_type" required>
+              <option value="">Select a boat type</option>
+              <option value="Powerboat">Powerboat</option>
+              <option value="Pontoon or deck boat">Pontoon or deck boat</option>
+              <option value="Sailboat, mast down">Sailboat, mast down</option>
+              <option value="Sailboat, mast up">Sailboat, mast up</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="location">Where is the boat?</label>
+            <select id="location" name="location" required>
+              <option value="">Select a location</option>
+              <option value="Lake Simcoe (Keswick / Sutton / Georgina)">Lake Simcoe (Keswick / Sutton / Georgina)</option>
+              <option value="Lake Simcoe (Lagoon City / Brechin / Beaverton)">Lake Simcoe (Lagoon City / Brechin / Beaverton)</option>
+              <option value="Georgian Bay (Port Severn / Honey Harbour / Midland)">Georgian Bay (Port Severn / Honey Harbour / Midland)</option>
+              <option value="Toronto / GTA">Toronto / GTA</option>
+              <option value="Other / Not listed">Other / Not listed</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="haulout_date">When does the boat come out of the water?</label>
+            <input type="date" id="haulout_date" name="haulout_date">
+            <p class="file-upload-note">If you do not have a date yet, leave this blank and tell us below.</p>
+          </div>
+
+          <div class="form-group">
+            <label for="sitting_on">How will the boat be sitting?</label>
+            <select id="sitting_on" name="sitting_on" required>
+              <option value="">Select one</option>
+              <option value="On a trailer">On a trailer</option>
+              <option value="On a cradle or stands">On a cradle or stands</option>
+              <option value="Not sure yet">Not sure yet</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Add ons</label>
+            <div class="checkbox-group">
+              <label><input type="checkbox" name="services" value="Zipper access door"> Zipper access door</label>
+              <label><input type="checkbox" name="services" value="Extra vents"> Extra vents</label>
+              <label><input type="checkbox" name="services" value="Wrap the mast separately"> Wrap the mast separately</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="photos">Photos of the boat (optional)</label>
+            <input type="file" id="photos" name="attachment" accept=".jpg,.png,.webp,.heic,.heif,.pdf" multiple>
+            <p class="file-upload-note">Accepted file types: JPG, PNG, WebP, HEIC, HEIF and PDF. 15 MB total.</p>
+          </div>
+
+          <div class="form-group"><label for="notes">Anything else we should know?</label><textarea id="notes" name="notes" rows="5"></textarea></div>
+
+          <div class="form-submit">
+            <button type="submit" class="btn btn-primary btn-large">Request a Quote</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="related-services">
+    <div class="container">
+      <h2>Related Services</h2>
+      <p>Get the boat ready for storage and take care of other work while it is out of the water.</p>
+      <div class="related-services-grid">
+        <div class="related-service">
+          <h3>Boat Detailing</h3>
+          <p>Clean the hull, deck and interior before the boat is covered for winter.</p>
+          <p><a href="/services/detailing">Learn more about boat detailing &rarr;</a></p>
+        </div>
+        <div class="related-service">
+          <h3>Canvas and Upholstery</h3>
+          <p>Repair covers, enclosures and upholstery while the boat is out of service.</p>
+          <p><a href="/services/canvas-upholstery">Learn more about marine canvas and upholstery &rarr;</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Questions</h2>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>How much does it cost?</summary>
+          <p>We quote by the foot. Length is the main factor, then boat type and any add ons like a zipper door or extra vents. Send us the details and we will price it.</p>
+        </details>
+        <details>
+          <summary>When should I book?</summary>
+          <p>Early. Spots fill, and marina haul out schedules back up through November. The sooner we know when your boat is coming out, the better we can slot you in.</p>
+        </details>
+        <details>
+          <summary>Do I need to be there when you wrap it?</summary>
+          <p>No. Tell us where the boat is and how it is sitting, and we handle it.</p>
+        </details>
+        <details>
+          <summary>Can I get into the boat over the winter?</summary>
+          <p>Yes, if you ask for a zipper access door when you book. Retrofitting one later is harder than putting it in the first time.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <button class="lightbox-nav lightbox-prev" aria-label="Previous">&#8249;</button>
+    <img src="" alt="Full size photo" id="lightbox-img">
+    <button class="lightbox-nav lightbox-next" aria-label="Next">&#8250;</button>
+  </div>
+
+  <footer class="site-footer"><div class="container">
+    <div class="footer-signup" style="max-width: 760px; margin: 0 auto 2rem; padding: 0 0 2rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.12);">
+      <p style="margin: 0 0 0.75rem; color: var(--text-on-dark); font-size: 0.95rem; line-height: 1.5;"><strong>Free boat maintenance calendar plus monthly checklist emails.</strong> Built for Ontario boat owners.</p>
+      <div class="ml-embedded" data-form="d2Ynoo"></div>
+    </div>
+    <div class="footer-grid"><div class="footer-col"><img src="/images/tyc-logo-white.svg" alt="Toronto Yacht Club" class="footer-logo" width="67" height="80"><h4>Toronto Yacht Club</h4><p>Professional marine detailing and repair serving the Greater Toronto Area since 2017.</p><div class="social-icons" style="margin-top:1rem;"><a href="https://www.facebook.com/share/1Hj6jngaML/?mibextid=wwXIfr" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a><a href="https://www.instagram.com/torontoyachtclub?igsh=enh2MmMycHd5amw4" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a></div></div><div class="footer-col"><h4>Quick Links</h4><ul class="footer-nav"><li><a href="/services">Services</a></li><li><a href="/history">About Us</a></li><li><a href="/ourwork">Our Work</a></li><li><a href="/inquiries">Contact / Inquiries</a></li><li><a href="/careers">Careers</a></li></ul></div><div class="footer-col"><h4>Contact</h4><address><a href="tel:2893250457">289-325-0457</a><br><a href="mailto:javier@torontoyachtclub.ca">javier@torontoyachtclub.ca</a><br><br>Mon–Fri: 9:00 AM – 6:00 PM</address></div><div class="footer-col"><h4>Locations</h4><address>Krates Marina — Keswick<br>Driftwood Cove — Port Severn<br>Grand Harbour — Brechin<br>Toronto</address></div></div><div class="footer-bottom">&copy; 2026 Toronto Yacht Club. All rights reserved.</div></div></footer>
+  <script src="/js/main.js"></script>
+  <script>
+  // Lightbox (matches /ourwork pattern)
+  const items=document.querySelectorAll('.gallery-item'),lightbox=document.getElementById('lightbox'),lbImg=document.getElementById('lightbox-img');let idx=0;const srcs=[];
+  items.forEach((item,i)=>{const img=item.querySelector('img');if(img){srcs.push(img.currentSrc || img.src);item.addEventListener('click',()=>{idx=i;openLB()});}});
+  function openLB(){lbImg.src=srcs[idx];lightbox.classList.add('active');document.body.style.overflow='hidden';}
+  function closeLB(){lightbox.classList.remove('active');lbImg.src='';document.body.style.overflow='';}
+  document.querySelector('.lightbox-close').addEventListener('click',closeLB);
+  document.querySelector('.lightbox-prev').addEventListener('click',()=>{idx=(idx-1+srcs.length)%srcs.length;lbImg.src=srcs[idx];});
+  document.querySelector('.lightbox-next').addEventListener('click',()=>{idx=(idx+1)%srcs.length;lbImg.src=srcs[idx];});
+  lightbox.addEventListener('click',e=>{if(e.target===lightbox)closeLB();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLB();if(e.key==='ArrowLeft')document.querySelector('.lightbox-prev').click();if(e.key==='ArrowRight')document.querySelector('.lightbox-next').click();});
+  </script>
+  <script>
+  (function () {
+    var form = document.getElementById('shrink-wrap-form');
+    var btn = form.querySelector('[type="submit"]');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      clearError();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+
+      var res, data;
+      try {
+        res = await fetch('/api/send', { method: 'POST', body: new FormData(form) });
+        data = await res.json();
+      } catch (_) {
+        btn.disabled = false;
+        btn.textContent = 'Request a Quote';
+        showError('Something went wrong. Please try again or call us at 289-325-0457.');
+        return;
+      }
+
+      if (res.ok) {
+        var header = document.getElementById('shrink-wrap-form-header');
+        if (header) header.style.display = 'none';
+        var container = document.getElementById('shrink-wrap-form-container');
+        if (container) container.style.display = 'none';
+        var banner = document.getElementById('submit-banner');
+        if (banner) { banner.classList.add('show'); banner.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Request a Quote';
+        showError((data && data.error) || 'Something went wrong. Please try again or call us at 289-325-0457.');
+      }
+    });
+
+    function showError(msg) {
+      var el = document.getElementById('form-error');
+      if (!el) {
+        el = document.createElement('p');
+        el.id = 'form-error';
+        el.style.cssText = 'color:#c0392b;margin-top:0.75rem;font-size:0.95rem;';
+        form.querySelector('.form-submit').appendChild(el);
+      }
+      el.textContent = msg;
+    }
+
+    function clearError() {
+      var el = document.getElementById('form-error');
+      if (el) el.textContent = '';
+    }
+  }());
+  </script>
+</body>
+</html>
