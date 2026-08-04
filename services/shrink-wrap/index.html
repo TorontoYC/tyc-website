@@ -25,7 +25,7 @@
   {"@context":"https://schema.org","@type":"Service","name":"Boat Shrink Wrapping","serviceType":"Boat Shrink Wrapping","description":"Framed and vented boat shrink wrapping at Keswick, Port Severn and Brechin, plus mobile service across Lake Simcoe, Georgian Bay and the GTA. Priced by the foot. Limited bookings each season.","url":"https://torontoyachtclub.ca/services/shrink-wrap","image":"https://torontoyachtclub.ca/images/shrink-wrap/tyc-shrink-wrap-hero.jpg","areaServed":["Lake Simcoe","Georgian Bay","Greater Toronto Area"],"provider":{"@type":"Organization","name":"Toronto Yacht Club","url":"https://torontoyachtclub.ca","telephone":"+1-289-325-0457","email":"javier@torontoyachtclub.ca","foundingDate":"2017","logo":"https://torontoyachtclub.ca/images/tyc-logo-white-footer.png","location":[{"@type":"Place","name":"Krates Marina (Keswick)","address":{"@type":"PostalAddress","streetAddress":"290 The Queensway S","addressLocality":"Keswick","addressRegion":"ON","postalCode":"L4P 2B3","addressCountry":"CA"}},{"@type":"Place","name":"Grand Harbour Marina (Brechin)","address":{"@type":"PostalAddress","streetAddress":"150 Laguna Pkwy","addressLocality":"Brechin","addressRegion":"ON","postalCode":"L0K 1B0","addressCountry":"CA"}}]}}
   </script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does it cost?","acceptedAnswer":{"@type":"Answer","text":"We quote by the foot. Length is the main factor, then boat type and any add ons like a zipper door or extra vents. Send us the details and we will price it."}},{"@type":"Question","name":"When should I book?","acceptedAnswer":{"@type":"Answer","text":"Early. Spots fill, and marina haul out schedules back up through November. The sooner we know when your boat is coming out, the better we can slot you in."}},{"@type":"Question","name":"Do I need to be there when you wrap it?","acceptedAnswer":{"@type":"Answer","text":"No. Tell us where the boat is and how it is sitting, and we handle it."}},{"@type":"Question","name":"Can I get into the boat over the winter?","acceptedAnswer":{"@type":"Answer","text":"Yes, if you ask for a zipper access door when you book. Retrofitting one later is harder than putting it in the first time."}}]}
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is included in a shrink wrap job?","acceptedAnswer":{"@type":"Answer","text":"Every wrap includes 4 vents and 4 moisture absorbers for humidity control, so air moves through the cover and the boat stays dry over the winter. Extra vents, extra moisture absorbers, a zipper access door and separate mast wrapping are available at additional cost."}},{"@type":"Question","name":"How much does it cost?","acceptedAnswer":{"@type":"Answer","text":"We quote by the foot. Length is the main factor, then boat type and any add ons like a zipper door or extra vents. Send us the details and we will price it."}},{"@type":"Question","name":"When should I book?","acceptedAnswer":{"@type":"Answer","text":"Early. Spots fill, and marina haul out schedules back up through November. The sooner we know when your boat is coming out, the better we can slot you in."}},{"@type":"Question","name":"Do I need to be there when you wrap it?","acceptedAnswer":{"@type":"Answer","text":"No. Tell us where the boat is and how it is sitting, and we handle it."}},{"@type":"Question","name":"Can I get into the boat over the winter?","acceptedAnswer":{"@type":"Answer","text":"Yes, if you ask for a zipper access door when you book. Retrofitting one later is harder than putting it in the first time."}}]}
   </script>
   <style>
     /* Page-specific: shrink wrap hero and layout */
@@ -257,6 +257,7 @@
         <p class="section-label">Request a Quote</p>
         <h2>Book Shrink Wrap</h2>
         <p>Tell us the length of the boat and when it comes out of the water, and we will send you a price.</p>
+        <p>Every wrap includes 4 vents and 4 moisture absorbers for humidity control. Extra vents and extra absorbers are available at additional cost.</p>
       </div>
 
       <div class="submit-banner" id="submit-banner" role="status" aria-live="polite">
@@ -276,18 +277,16 @@
 
           <div class="form-row">
             <div class="form-group"><label for="boat_make_model">Boat make and model</label><input type="text" id="boat_make_model" name="boat_make_model" required></div>
-            <div class="form-group"><label for="boat_loa">Length overall (feet)</label><input type="number" id="boat_loa" name="boat_loa" required min="1" step="0.1"></div>
+            <div class="form-group"><label for="boat_loa">Overall length (feet)</label><input type="number" id="boat_loa" name="boat_loa" required min="1" step="0.1"></div>
           </div>
 
           <div class="form-group">
-            <label for="boat_type">Boat type</label>
+            <label for="boat_type">Cruiser or flybridge?</label>
             <select id="boat_type" name="boat_type" required>
-              <option value="">Select a boat type</option>
-              <option value="Powerboat">Powerboat</option>
-              <option value="Pontoon or deck boat">Pontoon or deck boat</option>
-              <option value="Sailboat, mast down">Sailboat, mast down</option>
-              <option value="Sailboat, mast up">Sailboat, mast up</option>
-              <option value="Other">Other</option>
+              <option value="">Select one</option>
+              <option value="Cruiser">Cruiser</option>
+              <option value="Flybridge">Flybridge</option>
+              <option value="Neither, or not sure">Neither, or not sure</option>
             </select>
           </div>
 
@@ -323,7 +322,8 @@
             <label>Add ons</label>
             <div class="checkbox-group">
               <label><input type="checkbox" name="services" value="Zipper access door"> Zipper access door</label>
-              <label><input type="checkbox" name="services" value="Extra vents"> Extra vents</label>
+              <label><input type="checkbox" name="services" value="Extra vents (beyond the 4 included)"> Extra vents (beyond the 4 included)</label>
+              <label><input type="checkbox" name="services" value="Extra moisture absorbers (beyond the 4 included)"> Extra moisture absorbers (beyond the 4 included)</label>
               <label><input type="checkbox" name="services" value="Wrap the mast separately"> Wrap the mast separately</label>
             </div>
           </div>
