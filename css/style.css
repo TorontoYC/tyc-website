@@ -166,6 +166,7 @@ h4 { font-size: 1.1rem; }
 .hero-content { max-width: 640px; }
 .hero h1 { color: var(--white); margin-bottom: 1rem; }
 .hero p { font-size: 1.15rem; color: var(--text-on-dark); margin-bottom: 2rem; line-height: 1.7; }
+.brokerage-hero .brokerage-price { color: var(--white); }
 .hero-ctas { display: flex; gap: 0.75rem; flex-wrap: wrap; }
 
 /* Fullscreen hero — homepage */
