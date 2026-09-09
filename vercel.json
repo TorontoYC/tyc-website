@@ -3,7 +3,10 @@
   "trailingSlash": false,
   "redirects": [
     { "source": "/sell-your-boat", "destination": "/brokerage/sell", "permanent": true },
-    { "source": "/local-listings", "destination": "/brokerage", "permanent": true }
+    { "source": "/local-listings", "destination": "/brokerage", "permanent": true },
+    { "source": "/brokerage/listings/bayliner-215", "destination": "/brokerage/listings", "permanent": true },
+    { "source": "/brokerage/listings/larson-2014", "destination": "/brokerage/listings", "permanent": true },
+    { "source": "/brokerage/listings/key-largo-2022", "destination": "/brokerage/listings", "permanent": true }
   ],
   "headers": [
     {
