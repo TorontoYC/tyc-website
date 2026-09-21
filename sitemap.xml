@@ -85,7 +85,7 @@
   </url>
   <url>
     <loc>https://torontoyachtclub.ca/brokerage</loc>
-    <lastmod>2026-09-09</lastmod>
+    <lastmod>2026-09-21</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
@@ -102,6 +102,11 @@
     <loc>https://torontoyachtclub.ca/brokerage/valuation</loc>
     <lastmod>2026-09-09</lastmod>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://torontoyachtclub.ca/brokerage/listings/cruisers-1999</loc>
+    <lastmod>2026-09-21</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://torontoyachtclub.ca/brokerage/listings/carver-2002</loc>
