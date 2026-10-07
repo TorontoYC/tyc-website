@@ -1,0 +1,148 @@
+name: IndexNow
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      INDEXNOW_HOST: torontoyachtclub.ca
+      INDEXNOW_KEY: 190c2375c28e8f269498c58aee96e825
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Collect URLs
+        id: urls
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+          const path = require('node:path');
+          const { execFileSync } = require('node:child_process');
+          const { INDEXNOW_HOST: host, INDEXNOW_KEY: key } = process.env;
+          const urls = new Set();
+          const decode = text => text.replace(/&(#x[0-9a-f]+|#\d+|amp|quot|apos|lt|gt);/gi, (_, entity) => {
+            if (entity[0] === '#') return String.fromCodePoint(entity[1].toLowerCase() === 'x' ? parseInt(entity.slice(2), 16) : Number(entity.slice(1)));
+            return { amp: '&', quot: '"', apos: "'", lt: '<', gt: '>' }[entity.toLowerCase()];
+          });
+          const attributes = tag => Object.fromEntries([...tag.matchAll(/([^\s=<>/]+)\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))/g)]
+            .map(match => [match[1].toLowerCase(), decode(match[2] ?? match[3] ?? match[4])]));
+          function addUrl(raw) {
+            const value = raw.trim();
+            const parsed = new URL(value);
+            if (parsed.protocol !== 'https:' || parsed.host !== host || parsed.username || parsed.password) {
+              throw new Error(`Unexpected URL: ${value}`);
+            }
+            if (/^\/api(?:\/|$)/i.test(parsed.pathname)) return;
+            urls.add(value);
+          }
+          function addPage(file, html) {
+            if (/^api\//i.test(file)) return;
+            html = html.replace(/<!--[\s\S]*?-->/g, '');
+            const metas = [...html.matchAll(/<meta\b[^>]*>/gi)].map(match => attributes(match[0]));
+            if (metas.some(meta => /\bnoindex\b/i.test(meta.content || ''))) {
+              console.log(`Skipping noindex page: ${file}`);
+              return;
+            }
+            const canonical = [...html.matchAll(/<link\b[^>]*>/gi)].map(match => attributes(match[0]))
+              .find(link => /(?:^|\s)canonical(?:\s|$)/i.test(link.rel || ''));
+            if (!canonical?.href) throw new Error(`Missing canonical URL: ${file}`);
+            addUrl(canonical.href);
+          }
+          if (process.env.EVENT_NAME === 'workflow_dispatch') {
+            const sitemap = fs.readFileSync('sitemap.xml', 'utf8');
+            for (const match of sitemap.matchAll(/<loc>\s*([^<]+)\s*<\/loc>/g)) addUrl(decode(match[1]));
+          } else {
+            let before = process.env.BEFORE;
+            if (!before || /^0+$/.test(before)) {
+              before = execFileSync('git', ['hash-object', '-t', 'tree', '--stdin'], { input: '', encoding: 'utf8' }).trim();
+            }
+            const files = execFileSync('git', ['diff', '--name-only', '--no-renames', '-z', before, process.env.AFTER], { encoding: 'utf8' })
+              .split('\0').filter(Boolean);
+            for (const file of files) {
+              if (!/\.html$/i.test(file) || /^api\//i.test(file)) continue;
+              // Deleted pages use their previous canonical URL to notify removal.
+              const html = fs.existsSync(file) ? fs.readFileSync(file, 'utf8')
+                : execFileSync('git', ['show', `${before}:${file}`], { encoding: 'utf8' });
+              addPage(file, html);
+            }
+            // A sitemap-only change also warrants a homepage notification.
+            if (files.includes('sitemap.xml')) addPage('index.html', fs.readFileSync('index.html', 'utf8'));
+          }
+          const urlList = [...urls];
+          if (urlList.length > 10000) throw new Error('IndexNow accepts at most 10,000 URLs per submission.');
+          fs.writeFileSync(path.join(process.env.RUNNER_TEMP, 'indexnow.json'), JSON.stringify({
+            host, key, keyLocation: `https://${host}/${key}.txt`, urlList
+          }));
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, `has_urls=${urlList.length > 0}\n`);
+          console.log(`Collected ${urlList.length} URL(s).`);
+          if (!urlList.length) console.log('No eligible page changes. Skipping IndexNow.');
+          else console.log(urlList.join('\n'));
+          NODE
+
+      - name: Wait for deployment
+        if: steps.urls.outputs.has_urls == 'true'
+        shell: bash
+        run: |
+          key_url="https://${INDEXNOW_HOST}/${INDEXNOW_KEY}.txt"
+          deadline=$((SECONDS + 600))
+          ready=false
+          while (( SECONDS < deadline )); do
+            remaining=$((deadline - SECONDS))
+            request_timeout=15
+            if (( remaining < request_timeout )); then request_timeout=$remaining; fi
+            status=$(curl --silent --show-error --connect-timeout 5 --max-time "$request_timeout" \
+              --output "$RUNNER_TEMP/indexnow-key.txt" --write-out '%{http_code}' "$key_url") || status=000
+            echo "Key file HTTP status: $status"
+            if [[ "$status" == "200" && "$(cat "$RUNNER_TEMP/indexnow-key.txt")" == "$INDEXNOW_KEY" ]]; then
+              ready=true
+              break
+            fi
+            remaining=$((deadline - SECONDS))
+            if (( remaining <= 0 )); then break; fi
+            delay=15
+            if (( remaining < delay )); then delay=$remaining; fi
+            sleep "$delay"
+          done
+          if [[ "$ready" != "true" ]]; then
+            echo '::error::Key file was not available within 10 minutes. No URLs submitted.'
+            exit 1
+          fi
+          echo 'Key verified. Waiting 120 seconds for pages to finish deploying.'
+          sleep 120
+
+      - name: Submit to IndexNow
+        if: steps.urls.outputs.has_urls == 'true'
+        shell: bash
+        run: |
+          if status=$(curl --silent --show-error --connect-timeout 10 --max-time 60 \
+            --request POST 'https://api.indexnow.org/indexnow' \
+            --header 'Content-Type: application/json; charset=utf-8' \
+            --data-binary "@$RUNNER_TEMP/indexnow.json" \
+            --output "$RUNNER_TEMP/indexnow-response.txt" --write-out '%{http_code}'); then
+            echo "IndexNow HTTP status: $status"
+          else
+            echo "::warning::IndexNow transport error; HTTP status: ${status:-000}."
+          fi
+          case "$status" in
+            200|202) echo 'IndexNow submission accepted.' ;;
+            *) echo "::warning::IndexNow returned HTTP ${status:-000}. See response below." ;;
+          esac
+          if [[ -s "$RUNNER_TEMP/indexnow-response.txt" ]]; then
+            cat "$RUNNER_TEMP/indexnow-response.txt"
+            echo
+          fi
+          echo "IndexNow HTTP status: ${status:-000}" >> "$GITHUB_STEP_SUMMARY"
