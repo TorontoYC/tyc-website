@@ -27,6 +27,7 @@ const SKIP = new Set(['_honey', '_form_name']);
 const BLOCKED_EMAILS = [
   'veronicabecca1206@gmail.com',
   'henry.baker19889@gmail.com',
+  '@licscript.com',
 ];
 
 const AGENCY_PITCH_PATTERNS = [
@@ -46,6 +47,24 @@ const AGENCY_PITCH_PATTERNS = [
   ['increase your sales', /\bincrease your sales\b/i],
   ['brief plan with pricing', /\bbrief plan with pricing\b/i],
   ['pricing proposal', /\bpricing proposal\b/i],
+  ['b2b', /\bb2b\b/i],
+  ['outreach', /\boutreach\b/i],
+  ['lead gen', /\blead gen\b/i],
+  ['lead generation', /\blead generation\b/i],
+  ['prospecting', /\bprospecting\b/i],
+  ['cold email', /\bcold email\b/i],
+  ['marketing automation', /\bmarketing automation\b/i],
+  ['automated marketing', /\bautomated marketing\b/i],
+  ['ai-powered marketing', /\bai-powered marketing\b/i],
+  ['ai powered marketing', /\bai powered marketing\b/i],
+  ['reach millions', /\breach millions\b/i],
+  ['millions of businesses', /\bmillions of businesses\b/i],
+  ['growth strategy', /\bgrowth strategy\b/i],
+  ['grow your business', /\bgrow your business\b/i],
+  ['rank on google', /\brank on google\b/i],
+  ['ranking on google', /\branking on google\b/i],
+  ['app development', /\bapp development\b/i],
+  ['virtual assistant', /\bvirtual assistant\b/i],
 ];
 
 function esc(str) {
@@ -95,7 +114,10 @@ function isLikelySpam(fields) {
   }
 
   const email = String(first(fields.email)).trim().toLowerCase();
-  if (BLOCKED_EMAILS.includes(email)) {
+  if (BLOCKED_EMAILS.some((entry) => {
+    const blocked = entry.toLowerCase();
+    return blocked.startsWith('@') ? email.endsWith(blocked) : email === blocked;
+  })) {
     flagged = true;
     reasons.push(`Blocked email: ${email}`);
   }
