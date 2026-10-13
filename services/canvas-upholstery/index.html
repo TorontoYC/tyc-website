@@ -534,6 +534,7 @@
   lightbox.addEventListener('click',e=>{if(e.target===lightbox)closeLB();});
   document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLB();if(e.key==='ArrowLeft')document.querySelector('.lightbox-prev').click();if(e.key==='ArrowRight')document.querySelector('.lightbox-next').click();});
   </script>
+  <script src="/js/tyc-uploads.js" defer></script>
   <script>
   (function () {
     var form = document.getElementById('canvas-form');
@@ -542,13 +543,30 @@
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
       clearError();
+      var uploadText = btn.textContent;
       btn.disabled = true;
+      btn.textContent = 'Preparing photos...';
+      var formData;
+      try {
+        formData = await window.tycBuildFormData(form);
+      } catch (error) {
+        btn.disabled = false;
+        showError(error.message);
+        return;
+      } finally {
+        btn.textContent = uploadText;
+      }
       btn.textContent = 'Sending...';
 
       var res, data;
       try {
-        res  = await fetch('/api/send', { method: 'POST', body: new FormData(form) });
-        data = await res.json();
+        res  = await fetch('/api/send', { method: 'POST', body: formData });
+        try {
+          data = await res.json();
+        } catch (error) {
+          if (res.ok) throw error;
+          data = { error: window.tycBuildFormData.tooLargeMessage };
+        }
       } catch (_) {
         btn.disabled = false;
         btn.textContent = 'Request Estimate';
@@ -576,7 +594,7 @@
         el = document.createElement('p');
         el.id = 'form-error';
         el.style.cssText = 'color:#c0392b;margin-top:0.75rem;font-size:0.95rem;';
-        form.querySelector('.form-submit').appendChild(el);
+        btn.parentNode.insertBefore(el, btn);
       }
       el.textContent = msg;
     }
