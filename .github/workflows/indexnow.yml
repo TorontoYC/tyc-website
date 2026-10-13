@@ -59,7 +59,10 @@ jobs:
             }
             const canonical = [...html.matchAll(/<link\b[^>]*>/gi)].map(match => attributes(match[0]))
               .find(link => /(?:^|\s)canonical(?:\s|$)/i.test(link.rel || ''));
-            if (!canonical?.href) throw new Error(`Missing canonical URL: ${file}`);
+            if (!canonical?.href) {
+              console.log(`Skipping page without canonical: ${file}`);
+              return;
+            }
             addUrl(canonical.href);
           }
           if (process.env.EVENT_NAME === 'workflow_dispatch') {
