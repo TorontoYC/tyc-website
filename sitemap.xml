@@ -131,8 +131,13 @@
   </url>
   <url>
     <loc>https://torontoyachtclub.ca/blog</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://torontoyachtclub.ca/blog/transom-rot-repair</loc>
+    <lastmod>2026-10-26</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://torontoyachtclub.ca/blog/boat-winter-storage-damage-ontario</loc>
